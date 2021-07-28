@@ -4,13 +4,22 @@ html {
 
 body{
     background-color: beige;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Gowun Batang', serif;
+}
+
+ol{
+    list-style-type: ' — ';
 }
 
 .nav-name{
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 5px;
-    font-size: 32px;
+    font-family: 'Gowun Batang', serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+.nav-item{
+    font-size: 28px;
 }
 
 hr{
@@ -30,11 +39,9 @@ hr{
 }
 
 .content-heading{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Gowun Batang', serif;
     font-size: 25px;
-    /* letter-spacing: 3px; */
-    padding-bottom: 20px;
-    padding-top: 20px;
+    font-weight: bold;
 }
 
 sub{
@@ -49,10 +56,11 @@ sub{
     font-size: 40px;
 }
 
-
-.nav-item{
-    font-size: 32px;
+.award-item{
+    font-size: 25px;
 }
+
+
 
 a{
     text-decoration: none!important;
@@ -76,12 +84,14 @@ a:hover{
     body{
         font-size: 16px;
     }
+
 }
 
 
 
 @media screen and (max-width: 992px) {
     .top-border {
+        border-top: 2px, solid;
         padding-top: 60px;
     }
 
