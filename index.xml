@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Portfolio Site</title>
+    <title>Jaideep M. More</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Portfolio Site</description>
+    <description>Recent content on Jaideep M. More</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jun 2025 10:53:39 +0200</lastBuildDate>
@@ -14,6 +14,13 @@
       <pubDate>Sun, 15 Jun 2025 10:53:39 +0200</pubDate>
       <guid>http://localhost:1313/posts/first_post/</guid>
       <description>&lt;h2 id=&#34;you-are-watching-the-first-post-with--palki-sharma&#34;&gt;You are watching the First Post with  Palki Sharma&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;)_&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Well, hello there 👋. I’m Jaideep and welcome to my little corner of the web.&lt;/p&gt;&#xA;&lt;p&gt;This site exists for three main reasons:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;to prove that I’m not just a GitHub username floating in the void&lt;/li&gt;&#xA;&lt;li&gt;to document and share my research and engineering projects&lt;/li&gt;&#xA;&lt;li&gt;to give myself a space to write about the things that fascinate me in tech and beyond&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;My current technical interests include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Internet and network architecture&lt;/li&gt;&#xA;&lt;li&gt;Systems engineering and video streaming optimization&lt;/li&gt;&#xA;&lt;li&gt;Writing tools and automation to keep myself out of repetitive misery&lt;/li&gt;&#xA;&lt;li&gt;GameDev (currently developing my own platformer )&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
