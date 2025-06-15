@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Consistency Models | Jaideep M. More</title>
+    
+  
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/all_might.png"
+        style="width: 150px;"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Jaideep M. More</h1></a>
+      <h3>software engineer</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/categories/"><b>Categories</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/index.xml"><b>RSS</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">Consistency Models</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2023-06-30</time>
+    
+    
+  </strong>
+  <span> • 513 words</span>
+  <span> • 3 minute read</span>
+  
+    <div>
+      Last updated on
+      <time>2023-06-30</time>
+    </div>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/distributed_systems">distributed_systems</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p><img src="/images/consistency_models/banner.png" alt="Banner"></p>
+<h1 id="i-introduction">I. Introduction</h1>
+<h2 id="1-operations">1. Operations</h2>
+<p>An operation is a transition from one state to another state.</p>
+<h2 id="2-invocation--completion-times">2. Invocation &amp; Completion Times</h2>
+<p>In distributed systems, an operation might mean sending a request to a server, and receiving a response.</p>
+<p>To model this, we say that each operation has an <em>invocation time</em> and, should it complete, a strictly greater <em>completion time</em>, both given by an imaginary, perfectly synchronised, globally accessible clock. We refer to these clocks as providing a <em>real-time</em> order</p>
+<h2 id="3-concurrency">3. Concurrency</h2>
+<p><img src="/images/consistency_models/concurrency.svg" alt="concurrency"></p>
+<p>Two operations might overlap in time. For instance, given two operations A and B, A could begin, B could begin, A could complete, and then B could complete.</p>
+<p>We say that two operations A and B are <em>concurrent</em> if there is some time during which A and B are both executing.</p>
+<h1 id="ii-consistency-model">II. Consistency Model:</h1>
+<p>A consistency model is a set of guarantees made by the distributed system in terms of the ordering of operations.</p>
+<p>It is a contract between a distributed system and the applications that run on it</p>
+<p>There are performance and simplicity tradeoff:</p>
+<ul>
+<li>
+<p>Stronger consistency models:</p>
+<ul>
+<li>Easier to write applications</li>
+<li>More guarantees for the system to ensure</li>
+</ul>
+</li>
+<li>
+<p>Weaker consistency models:</p>
+<ul>
+<li>Harder to write applications</li>
+<li>Fewer guarantees for the system to ensure</li>
+</ul>
+</li>
+</ul>
+<h1 id="iii-strict-consistency">III. Strict Consistency:</h1>
+<p><img src="/images/consistency_models/strict-consistency.svg" alt="strict_consistency"></p>
+<p>All replicas execute transactions in some <em>total order</em></p>
+<p>That total order <em>preserves the real-time ordering between transactions</em></p>
+<ul>
+<li>If transaction A completes before B begins, then A is ordered before B in real-time</li>
+<li>If neither A nor B completes before the other begins, then there is no realtime order. But there must be some total order.</li>
+</ul>
+<p>Strict consistency is a <em>transactional</em> model: It guarantees that transactions take place <em>atomically</em>, a transaction’s sub-operations do not appear to interleave with sub-operations from other transactions.</p>
+<h1 id="iv-linearisability">IV. Linearisability:</h1>
+<p><img src="/images/consistency_models/linearisability.svg" alt="linearisability"></p>
+<p>All replicas execute operations in some <em>total order</em></p>
+<p>That total order <em>preserves the real-time ordering between operations</em></p>
+<ul>
+<li>If operation A completes before B begins, then A is ordered before B in real-time</li>
+<li>If neither A nor B completes before the other begins, then there is no realtime order. But there must be some total order.</li>
+</ul>
+<p>Linearisability is a <em>single-object</em> model, but the scope of “an object” varies. Some systems provide linearisability on individual keys in a key-value store; others might provide linearisable operations on multiple keys in a table.</p>
+<h1 id="v-sequential-consistency">V. Sequential Consistency:</h1>
+<p><img src="/images/consistency_models/sequential-consistency.svg" alt="sequential_consistency"></p>
+<p>All replicas execute operations in some total order</p>
+<p>That total order preserves the process ordering between operations</p>
+<ul>
+<li>If process P issues operation A before operation B, then A is ordered before B by the process order (i.e., preserves local ordering)</li>
+<li>If operations A and B are done by different processes then there is no process order between them. But there must be some total order.</li>
+</ul>
+<h1 id="vi-causal-consistency">VI. Causal Consistency:</h1>
+<p><img src="/images/consistency_models/causal-consistency.svg" alt="causal_consistency"></p>
+<p>Writes that are causally related must be seen by all processes in same order.</p>
+<p>Concurrent writes may be seen in a different order on different processes.</p>
+<p>Causal consistency captures the notion that causally-related operations should appear in the same order on all processes—though processes may disagree about the order of causally independent operations.</p>
+<h1 id="vii-eventual-consistency">VII. Eventual Consistency:</h1>
+<p><img src="/images/consistency_models/eventual-consistency.svg" alt="eventual_consistency"></p>
+<p>All replicas eventually converge to the same state.</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Phoenix009">GitHub</a>
+      
+         | 
+        <a href="https://www.linkedin.com/in/jaideep-more-a9733015a/">Linkedin</a>
+      
+         | 
+        <a href="https://jaideepmore.medium.com/">Medium</a>
+      
+         | 
+        <a href="">Mail</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>Jaideep More</strong></a>.
+    
+  </p>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

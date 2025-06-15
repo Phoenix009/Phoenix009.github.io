@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Memory coherence in shared virtual memory system | Jaideep M. More</title>
+    
+  
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/all_might.png"
+        style="width: 150px;"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Jaideep M. More</h1></a>
+      <h3>software engineer</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/categories/"><b>Categories</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/index.xml"><b>RSS</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">Memory coherence in shared virtual memory system</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2023-06-23</time>
+    
+    
+  </strong>
+  <span> • 1553 words</span>
+  <span> • 8 minute read</span>
+  
+    <div>
+      Last updated on
+      <time>2023-06-23</time>
+    </div>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/distributed_systems">distributed_systems</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p><img src="/images/understanding_rpc/banner.png" alt="Banner"></p>
+<h1 id="introduction">Introduction:</h1>
+<p>Remote Procedure Call (RPC) is based on the observation that procedure calls are a well-known and well-understood mechanism for transfer of control within a program running on a single computer.</p>
+<p>It is proposed that this same mechanism be extended to provide for transfer of control and data across a communication network. RPC  Makes the programming of distributed systems look similar, if not identical, to conventional programming - achieving high level of distribution transparency.</p>
+<h1 id="rpc-call-semantics">RPC call semantics:</h1>
+<p>Request-reply protocols can be implemented in different ways to provide different delivery guarantees. The main choices are:</p>
+<ol>
+<li>
+<p><strong>Retry Request message</strong>: Retransmit the request until either a reply is received or the server is assumed to have failed.</p>
+</li>
+<li>
+<p><strong>Duplicate Filtering</strong>: Controls whether to filter out duplicate requests at the server.</p>
+</li>
+<li>
+<p><strong>Retransmission of Results</strong>: keeps a local history of result messages to enable lost results to be retransmitted without re-executing the operations at the server.</p>
+</li>
+</ol>
+<p>Combinations of these choices lead to a variety of possible semantics for the reliability of remote invocations.
+<img src="images/understanding_rpc/RPC_semantics.svg" alt="RPC Semantics"></p>
+<h2 id="1-maybe-semantics">1. Maybe semantics:</h2>
+<ul>
+<li>The remote procedure call may be executed once or not at all.</li>
+<li>Can suffer from the following types of failure:
+<ol>
+<li>Omission failures if the request or reply got lost. Either
+<ul>
+<li>the operation was not performed. (the request was lost).</li>
+<li>the operation was performed (the reply was lost).</li>
+</ul>
+</li>
+<li>Crash failures when the server fails.</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-at-least-once-semantics">2. At-least-once semantics:</h2>
+<ul>
+<li>Semantics achieved by retransmission of request messages. As there is no duplicate filtering, a duplicate request leads to re-execution of the procedure.</li>
+<li>Can suffer from the following failures:
+<ol>
+<li>Crash failures when the server fails.</li>
+<li>Arbitrary failures: when the procedures are executed multiple times. One has to be careful, can modify the state multiple times.</li>
+</ol>
+</li>
+</ul>
+<h2 id="3-at-most-once-semantics">3. At-most-once semantics:</h2>
+<ul>
+<li>Semantics can be achieved by using all the fault-tolerance measures.</li>
+<li>The use of retries masks any omission failures.</li>
+<li>It prevents arbitrary failures by ensuring none of the operations are performed more than once.</li>
+</ul>
+<h1 id="rpc-structure">RPC Structure:</h1>
+<h2 id="overview">Overview</h2>
+<p><img src="images/understanding_rpc/RPC-structure.svg" alt="RPC Structure"></p>
+<p>When making remote calls, five pieces of program are involved: the <code>user</code>, <code>user-stub</code>, <code>RPCRuntime</code>, <code>server-stub</code> and the <code>server</code></p>
+<p>The <code>user</code>, the <code>user-stub</code> and one instance of <code>RPCRuntime</code> execute in the caller machine;
+the <code>server</code>, <code>server-stub</code> and another instance of <code>RPCRuntime</code> execute in the callee machine.</p>
+<h3 id="user-stub"><code>user-stub</code>:</h3>
+<p>is responsible for placing the specification of the target procedure and their arguments into one or more packets and asking the <code>RPCRuntime</code> to transmit these reliably to the callee machine.</p>
+<h3 id="server-stub"><code>server-stub</code>:</h3>
+<p>is responsible for unpacking the information sent by the <code>user-stub</code> and calling the appropriate procedure in the server. When the call in the server completes, it returns to the <code>server-stub</code> and the results are passed back to the suspended process in the caller machine.</p>
+<h3 id="rpcruntime"><code>RPCRuntime</code>:</h3>
+<p>is responsible for retransmissions, acknowledgements, packet routing and encryption.</p>
+<p>A programmer does not need to build detailed communication-related code. After designing the interface, he need only write the user and server code.</p>
+<ul>
+<li>An <strong>interface</strong> module is mainly a list of procedure names, together with the types of their arguments and results.</li>
+<li>A program module <strong>implementing procedures</strong> in an interface is said to <strong>export</strong> that interface.</li>
+<li>A program module <strong>calling procedures</strong> from an interface is said to <strong>import</strong> that interface.</li>
+</ul>
+<h2 id="binding">Binding:</h2>
+<p><em>How does a client specify what he wants to be bound to?</em>
+<em>How does a caller determine the machine address of the callee?</em>
+<em>How to specify to the callee the procedure to be invoked?</em></p>
+<p>The binding operation binds an importer of an interface to an exporter of an interface. After binding, calls made by the importer invokes the procedures implemented by the exporter.</p>
+<p>We now discuss the binding discussed in the paper which uses Grapevine for name resolution. There are alternatives to using such a database</p>
+<h3 id="naming-interfaces">Naming Interfaces:</h3>
+<p>There are two parts to the name of an interface:
+1. <code>type</code>: which interface the caller expects the callee to implement. Ex: mail server
+2. <code>instance</code>: which particular implementor of an abstract interface is desired: Ex: some particular mail server selected from many</p>
+<h3 id="locating-an-exporter">Locating an Exporter:</h3>
+<p>We use the Grapevine distributed database for our RPC binding. Grapevines database consists of a set of entries each having a key value known as Grapevine <code>RName</code>.</p>
+<p>There are two types of entries: <code>individual</code> and <code>groups</code></p>
+<p>Grapevine keeps several information for each entry but we are concerned with only two:
+1. <code>connect-site</code> for each <code>individual</code> entry: network address
+2. <code>member-list</code> for each <code>group</code>: list of <code>RName</code></p>
+<p>RPC package maintains two entries in the Grapevine database for each interface name:
+1. <code>type</code>: value is a <code>member-list</code> whose elements are the <code>RName</code> of the <code>instance</code> of that <code>type</code>
+2. <code>instance</code>: value is a <code>connect-site</code> and is the network address of the machine on which that instance was last exported</p>
+<h3 id="exporting-an-interface">Exporting an Interface</h3>
+<p>When an exporter wishes to make his interface available to remote clients, the server code calls the <code>server-stub</code> which in turn calls a procedure <code>ExportInterface</code> in <code>RPCRuntime</code>.</p>
+<p><code>ExportInterface</code> is given the interface name, a procedure (dispatcher) implemented in <code>server-stub</code> which will handle incoming calls for the interface.</p>
+<p>It calls Grapevine and ensures that appropriate entries exists for the <code>instance</code> and <code>type</code> of the interface.</p>
+<p><code>RPCRuntime</code> then records information about this export in a table maintained on the exporting machine. For each currently exported interface, this table contains the interface name, the dispatcher and a 32-bit value that serves as a permanently <code>unique_identifier</code> of the export.</p>
+<h3 id="importing-an-interface">Importing an Interface</h3>
+<p>When an importer wants to bind to an exporter, the user code calls its <code>user-stub</code> which calls a procedure, <code>ImportInterface</code> with the <code>type</code> and <code>instance</code> information in the <code>RPCRuntime</code>. <code>RPCRuntime</code> queries Grapevine and gets the network address of the exporter to make RPC for the binding information.</p>
+<p>Depending on whether the machine is currently exporting the interface, appropriate binding information (the <code>unique_identifier</code> ) is sent back to the importing machine and the binding succeeds. The exporter network address, identifier and table index are remembered by the <code>user-stub</code> for use in remote calls.</p>
+<h1 id="transport-protocol">Transport Protocol:</h1>
+<p>The particular nature of RPC communication means that there are substantial performance gains possible if one designs and implements a transport protocol specifically for RPC.</p>
+<p>One aim we emphasised in our protocol design was minimising</p>
+<ul>
+<li>the elapsed time between initiating a call and getting results</li>
+<li>the load imposed on a server by number of users.</li>
+</ul>
+<p>With protocols for bulk data transfers this is not important: most of the time is spent in setting up and taking down connections, and require maintenance of state information.</p>
+<p>We want our machines to be able to serve substantial number of clients and it would be unacceptable to require either a large amount of state information or expensive connection handshaking.</p>
+<p>We guarantee that if the call returns to the user then the procedure in the server has been invoked <strong>precisely once</strong> (at-most-once semantics?), otherwise an exception is reported to the user.</p>
+<p>If an exception is sent, then the user has no idea whether the server has crashed or if there is a problem in the network.</p>
+<h2 id="simple-calls">Simple Calls:</h2>
+<p>The machine that transmits a packet is responsible for retransmitting it until an acknowledgement is received (Retransmit Request Message).</p>
+<p>The result of a call is sufficient acknowledgement that the call was received and a call packet is sufficient acknowledgement for the previous call made. (No explicit ACKs)</p>
+<p>To make a call the caller sends a call packet containing <em>call_identifier</em>, data <strong>specifying the desired procedure and the arguments</strong>. When a procedure returns, a result packet containing the <em>same call identifier</em>, and the results is sent back to the caller.</p>
+<p>The call_identifier consists of:
+1. machine_identifier: permanent and globally unique (IP Address)
+2. machine relative process_identifier for the calling process (Port#)
+3. sequence number</p>
+<p>We define an <strong>activity</strong> as a tuple (machine_identifier, process_identifier). the important property of an activity is that <strong>each activity has at most one outstanding packet</strong>.</p>
+<p>When a call packet is received, it can be discarded as a duplicate by examining its caller_identifier (Duplicate Filtering)</p>
+<p>This scheme guarantees of traditional connection-oriented protocols without the costs. We are assuming that the call sequence number from an activity does not repeat even if the calling machine is restarted. We generate conversation identifier based on a 32-bit clock maintained by every machine (initialised form network time servers when a machine restarts).</p>
+<h2 id="complicated-calls">Complicated Calls:</h2>
+<p>To handle lost packets, long duration calls and long gaps between calls, the packet is modified to request an explicit acknowledgement.</p>
+<p>When the caller gets the acknowledgement it waits for the result packet. While waiting, the caller periodically send a probe packet to the callee, which it is expected to receive an ACK.</p>
+<p>This helps to detect if the callee has crashed or if there is a serious issue with the communication network.</p>
+<p>Provided the caller receives ACK for the probes it continues waiting. Notice this does not detect if the callee has deadlocked. This is in keeping with the semantics of local procedure calls.</p>
+<p>If the arguments or results are too large to fit in a single packet, they are sent in multiple packets with each but the last packet requiring an explicit ACK. This allows the implementation to use only one packet buffer at each end for the call and avoids the necessity of including the buffering and flow control strategies found in normal bulk data-transfer protocols.</p>
+<p>Thus, if the call requires more than one packet for its arguments or results, our protocol sends more packets than are logically required.</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Phoenix009">GitHub</a>
+      
+         | 
+        <a href="https://www.linkedin.com/in/jaideep-more-a9733015a/">Linkedin</a>
+      
+         | 
+        <a href="https://jaideepmore.medium.com/">Medium</a>
+      
+         | 
+        <a href="">Mail</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>Jaideep More</strong></a>.
+    
+  </p>
+  
+</footer>
+
+    </div>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jaideep M. More</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Jaideep M. More</description>
+    <title>Distributed_systems on Jaideep M. More</title>
+    <link>http://localhost:1313/tags/distributed_systems/</link>
+    <description>Recent content in Distributed_systems on Jaideep M. More</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/distributed_systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Consistency Models</title>
       <link>http://localhost:1313/posts/consistency_models/</link>
@@ -28,13 +28,6 @@
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/threads/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/first_post/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;A &amp;ldquo;thread&amp;rdquo; is a straightforward concept: a single sequential flow of control. Having multiple threads in a program means that at any instant the program has multiple points of execution.&lt;/p&gt;&#xA;&lt;p&gt;The programmer can mostly view the threads as executing simultaneously, as if the computer were endowed with as many processors as there are threads. The programmer must be aware that the computer might not in fact execute all his threads simultaneously.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Well, hello there 👋. I’m Jaideep and welcome to my little corner of the web.&lt;/p&gt;&#xA;&lt;p&gt;This site exists for three main reasons:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;to prove that I’m not just a GitHub username floating in the void&lt;/li&gt;&#xA;&lt;li&gt;to document and share my research and engineering projects&lt;/li&gt;&#xA;&lt;li&gt;to give myself a space to write about the things that fascinate me in tech and beyond&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;My current technical interests include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Internet and network architecture&lt;/li&gt;&#xA;&lt;li&gt;Systems engineering and video streaming optimization&lt;/li&gt;&#xA;&lt;li&gt;Writing tools and automation to keep myself out of repetitive misery&lt;/li&gt;&#xA;&lt;li&gt;GameDev (currently developing my own platformer )&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

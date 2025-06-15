@@ -6,14 +6,28 @@
     <description>Recent content in Posts on Jaideep M. More</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jun 2025 10:53:39 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First_post</title>
-      <link>http://localhost:1313/posts/first_post/</link>
-      <pubDate>Sun, 15 Jun 2025 10:53:39 +0200</pubDate>
-      <guid>http://localhost:1313/posts/first_post/</guid>
-      <description>&lt;h2 id=&#34;you-are-watching-the-first-post-with--palki-sharma&#34;&gt;You are watching the First Post with  Palki Sharma&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;)_&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <title>Consistency Models</title>
+      <link>http://localhost:1313/posts/consistency_models/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/consistency_models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/consistency_models/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;i-introduction&#34;&gt;I. Introduction&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-operations&#34;&gt;1. Operations&lt;/h2&gt;&#xA;&lt;p&gt;An operation is a transition from one state to another state.&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-invocation--completion-times&#34;&gt;2. Invocation &amp;amp; Completion Times&lt;/h2&gt;&#xA;&lt;p&gt;In distributed systems, an operation might mean sending a request to a server, and receiving a response.&lt;/p&gt;&#xA;&lt;p&gt;To model this, we say that each operation has an &lt;em&gt;invocation time&lt;/em&gt; and, should it complete, a strictly greater &lt;em&gt;completion time&lt;/em&gt;, both given by an imaginary, perfectly synchronised, globally accessible clock. We refer to these clocks as providing a &lt;em&gt;real-time&lt;/em&gt; order&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Memory coherence in shared virtual memory system</title>
+      <link>http://localhost:1313/posts/understanding_rpc/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/understanding_rpc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/understanding_rpc/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction:&lt;/h1&gt;&#xA;&lt;p&gt;Remote Procedure Call (RPC) is based on the observation that procedure calls are a well-known and well-understood mechanism for transfer of control within a program running on a single computer.&lt;/p&gt;&#xA;&lt;p&gt;It is proposed that this same mechanism be extended to provide for transfer of control and data across a communication network. RPC  Makes the programming of distributed systems look similar, if not identical, to conventional programming - achieving high level of distribution transparency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programming with Threads - Introduction</title>
+      <link>http://localhost:1313/posts/threads/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/threads/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/first_post/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;A &amp;ldquo;thread&amp;rdquo; is a straightforward concept: a single sequential flow of control. Having multiple threads in a program means that at any instant the program has multiple points of execution.&lt;/p&gt;&#xA;&lt;p&gt;The programmer can mostly view the threads as executing simultaneously, as if the computer were endowed with as many processors as there are threads. The programmer must be aware that the computer might not in fact execute all his threads simultaneously.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
