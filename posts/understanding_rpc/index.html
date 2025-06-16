@@ -9,7 +9,7 @@
   />
   
     
-      <title>Memory coherence in shared virtual memory system | Jaideep M. More</title>
+      <title>Understanding Remote Procedure Calls | Jaideep M. More</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -83,7 +83,7 @@
         
   <main>
     <article>
-      <h1 class="title">Memory coherence in shared virtual memory system</h1>
+      <h1 class="title">Understanding Remote Procedure Calls</h1>
       
       <div class="post-meta">
   <strong>
@@ -127,7 +127,7 @@
 </li>
 </ol>
 <p>Combinations of these choices lead to a variety of possible semantics for the reliability of remote invocations.
-<img src="images/understanding_rpc/RPC_semantics.svg" alt="RPC Semantics"></p>
+<img src="/images/understanding_rpc/RPC_semantics.svg" alt="RPC Semantics"></p>
 <h2 id="1-maybe-semantics">1. Maybe semantics:</h2>
 <ul>
 <li>The remote procedure call may be executed once or not at all.</li>
@@ -161,7 +161,7 @@
 </ul>
 <h1 id="rpc-structure">RPC Structure:</h1>
 <h2 id="overview">Overview</h2>
-<p><img src="images/understanding_rpc/RPC-structure.svg" alt="RPC Structure"></p>
+<p><img src="/images/understanding_rpc/RPC-structure.svg" alt="RPC Structure"></p>
 <p>When making remote calls, five pieces of program are involved: the <code>user</code>, <code>user-stub</code>, <code>RPCRuntime</code>, <code>server-stub</code> and the <code>server</code></p>
 <p>The <code>user</code>, the <code>user-stub</code> and one instance of <code>RPCRuntime</code> execute in the caller machine;
 the <code>server</code>, <code>server-stub</code> and another instance of <code>RPCRuntime</code> execute in the callee machine.</p>

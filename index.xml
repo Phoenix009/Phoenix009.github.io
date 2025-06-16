@@ -16,7 +16,7 @@
       <description>&lt;p&gt;&lt;img src=&#34;https://Phoenix009.github.io/images/consistency_models/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;i-introduction&#34;&gt;I. Introduction&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-operations&#34;&gt;1. Operations&lt;/h2&gt;&#xA;&lt;p&gt;An operation is a transition from one state to another state.&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-invocation--completion-times&#34;&gt;2. Invocation &amp;amp; Completion Times&lt;/h2&gt;&#xA;&lt;p&gt;In distributed systems, an operation might mean sending a request to a server, and receiving a response.&lt;/p&gt;&#xA;&lt;p&gt;To model this, we say that each operation has an &lt;em&gt;invocation time&lt;/em&gt; and, should it complete, a strictly greater &lt;em&gt;completion time&lt;/em&gt;, both given by an imaginary, perfectly synchronised, globally accessible clock. We refer to these clocks as providing a &lt;em&gt;real-time&lt;/em&gt; order&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Memory coherence in shared virtual memory system</title>
+      <title>Understanding Remote Procedure Calls</title>
       <link>https://Phoenix009.github.io/posts/understanding_rpc/</link>
       <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://Phoenix009.github.io/posts/understanding_rpc/</guid>
