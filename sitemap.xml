@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/consistency_models/</loc>
+    <loc>https://Phoenix009.github.io/posts/consistency_models/</loc>
     <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/distributed_systems/</loc>
+    <loc>https://Phoenix009.github.io/tags/distributed_systems/</loc>
     <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://Phoenix009.github.io/</loc>
     <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://Phoenix009.github.io/posts/</loc>
     <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://Phoenix009.github.io/tags/</loc>
     <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/understanding_rpc/</loc>
+    <loc>https://Phoenix009.github.io/posts/understanding_rpc/</loc>
     <lastmod>2023-06-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/concurrency/</loc>
+    <loc>https://Phoenix009.github.io/tags/concurrency/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/threads/</loc>
+    <loc>https://Phoenix009.github.io/posts/threads/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://Phoenix009.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://Phoenix009.github.io/categories/</loc>
   </url>
 </urlset>

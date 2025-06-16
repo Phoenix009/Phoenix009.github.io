@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concurrency on Jaideep M. More</title>
-    <link>http://localhost:1313/tags/concurrency/</link>
+    <link>https://Phoenix009.github.io/tags/concurrency/</link>
     <description>Recent content in Concurrency on Jaideep M. More</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Jun 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Phoenix009.github.io/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming with Threads - Introduction</title>
-      <link>http://localhost:1313/posts/threads/</link>
+      <link>https://Phoenix009.github.io/posts/threads/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/threads/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/first_post/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;A &amp;ldquo;thread&amp;rdquo; is a straightforward concept: a single sequential flow of control. Having multiple threads in a program means that at any instant the program has multiple points of execution.&lt;/p&gt;&#xA;&lt;p&gt;The programmer can mostly view the threads as executing simultaneously, as if the computer were endowed with as many processors as there are threads. The programmer must be aware that the computer might not in fact execute all his threads simultaneously.&lt;/p&gt;</description>
+      <guid>https://Phoenix009.github.io/posts/threads/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://Phoenix009.github.io/images/first_post/banner.png&#34; alt=&#34;Banner&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-introduction&#34;&gt;I. Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;A &amp;ldquo;thread&amp;rdquo; is a straightforward concept: a single sequential flow of control. Having multiple threads in a program means that at any instant the program has multiple points of execution.&lt;/p&gt;&#xA;&lt;p&gt;The programmer can mostly view the threads as executing simultaneously, as if the computer were endowed with as many processors as there are threads. The programmer must be aware that the computer might not in fact execute all his threads simultaneously.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
