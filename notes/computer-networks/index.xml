@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer Networks on Jaideep M. More</title><link>https://Phoenix009.github.io/notes/computer-networks/</link><description>Recent content in Computer Networks on Jaideep M. More</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://Phoenix009.github.io/notes/computer-networks/index.xml" rel="self" type="application/rss+xml"/><item><title>Application Layer</title><link>https://Phoenix009.github.io/notes/computer-networks/application-layer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/application-layer/</guid><description>&lt;h3 id="network-application-architectures">Network Application Architectures:&lt;/h3>
+&lt;p>From the application developer perspective, &lt;mark>the network architecture is fixed&lt;/mark> and provides a specific set of services to applications.&lt;/p>
+&lt;p>The &lt;mark>application architecture is designed by the application developer&lt;/mark> and dictates how the application is structured over the various end systems.&lt;/p>
+&lt;p>Two predominant architectural paradigms:&lt;/p>
+&lt;ol>
+&lt;li>Client Server Architecture&lt;/li>
+&lt;li>Peer-to-Peer Architecture&lt;/li>
+&lt;/ol>
+&lt;h4 id="client-server-architecture">Client-Server Architecture:&lt;/h4>
+&lt;p>There is an always-on host, called the server which services request from many other hosts called clients.&lt;/p></description></item><item><title>Web and HTTP</title><link>https://Phoenix009.github.io/notes/computer-networks/web-and-http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/web-and-http/</guid><description>&lt;p>HTTP is implemented in two programs: a client program and a server program. The client and server program running on two different hosts exchange HTTP messages. HTTP defines the structure of these messages and how the client and server exchanges the messages.&lt;/p>
+&lt;p>HTTP defines how web clients requests web pages from web servers and how servers transfers the web pages to clients.&lt;/p>
+&lt;p>&lt;mark>HTTP uses TCP as its underlying transport protocol&lt;/mark> and is a stateless protocol. It stores no information about the clients.&lt;/p></description></item><item><title>DNS - Internets Directory Service</title><link>https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/</guid><description>&lt;p>&lt;strong>RFC 1034, 1035: can be referred to get deep understanding&lt;/strong>&lt;/p>
+&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>One identifier for a host is its hostname such as &lt;a href="https://www.google.com" rel="noopener">www.google.com&lt;/a>. However, hostnames provide little, if any information about the location within the Internet of the host.&lt;/p>
+&lt;p>For these reasons hosts are identified by an IP Address&lt;/p>
+&lt;p>We need a &lt;mark>directory service that translates hostnames to IP addresses&lt;/mark>. This is the main task of the domain name system DNS.&lt;/p>
+&lt;p>The DNS is&lt;/p></description></item><item><title>Email</title><link>https://Phoenix009.github.io/notes/computer-networks/email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/email/</guid><description>&lt;p>It has three major components:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>User Agent
+Allows users to read, reply, forward and compose messages.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mail Servers
+Form the core of email infrastructure&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>SMTP - Simple Message Transfer Protocol
+Is the principal application-layer protocol for email. Uses reliable data transfer service of TCP. Uses a client-server architecture. Each mail server behaves as both a client and a server.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="smtp---simple-message-transfer-protocol">SMTP - Simple Message Transfer Protocol:&lt;/h3>
+&lt;p>SMTP transfers messages from senders mail servers to the recipients mail server.&lt;/p></description></item><item><title>Socket Programming</title><link>https://Phoenix009.github.io/notes/computer-networks/socket-programming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/socket-programming/</guid><description>&lt;p>A typical network application consists of a pair of programs —
+a client program and a server program — residing in two different end systems.&lt;/p>
+&lt;p>When these two programs are executed, a client process and a server process are created, and these processes communicate with each other by reading from, and writing to, sockets.&lt;/p>
+&lt;p>When creating a network application, the developer’s main task is therefore to write the code for both the client and server programs.&lt;/p></description></item><item><title>Transport Layer</title><link>https://Phoenix009.github.io/notes/computer-networks/transport-layer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/transport-layer/</guid><description>&lt;p>How does TLS work?&lt;/p>
+&lt;h3 id="introduction">Introduction:&lt;/h3>
+&lt;p>A transport layer protocol provides for &lt;mark>logical communication between application process&lt;/mark> running on different hosts.&lt;/p>
+&lt;p>Transport layer protocols are implemented in the end systems but not in network routers.&lt;/p>
+&lt;p>On the sending side, the transport layer converts the application layer messages into transport layer packets known as segments.&lt;/p>
+&lt;p>More than one transport layer protocol may be available to network applications. For example, the internet has two protocols - TCP and UDP.&lt;/p></description></item><item><title>Connectionless Transport - UDP</title><link>https://Phoenix009.github.io/notes/computer-networks/connectionless-transport---udp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/connectionless-transport---udp/</guid><description>&lt;p>UDP does just about as little as a transport protocol can do. Aside from the multiplexing/demultiplexing function and some light error checking, it adds nothing to IP.&lt;/p>
+&lt;p>UDP takes messages from the application process, attaches source and destination port number fields for the multiplexing/demultiplexing service, adds two other small fields and passes the resulting segment to the network layer.&lt;/p>
+&lt;p>With UDP there is no handshaking between sending and receiving transport layer entities before sending a segment. For this reason, UDP is said to be connectionless.&lt;/p></description></item><item><title>Principles of Reliable Data Transfer</title><link>https://Phoenix009.github.io/notes/computer-networks/principles-of-reliable-data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/principles-of-reliable-data-transfer/</guid><description>&lt;h3 id="1-rdt-10-rdt-over-a-perfectly-reliable-channel">1. RDT 1.0: RDT over a perfectly reliable channel.&lt;/h3>
+&lt;p>We first consider the simplest case, in which the underlying channel is completely reliable.&lt;/p>
+&lt;p>&lt;img src="https://Phoenix009.github.io/notes/computer-networks/images/rdt1.0.png" alt="rdt1.0" loading="lazy">&lt;/p>
+&lt;p>All packet flow is from sender to receiver, with a perfectly reliable channel there is no need for the receiver side to provide any feedback to the sender since nothing can go wrong.&lt;/p>
+&lt;p>We have assumed that the receiver is able to receive as fast as sender can send. Thus, no need for receiver to ask the sender to slow down.&lt;/p></description></item><item><title>Pipelined RDT</title><link>https://Phoenix009.github.io/notes/computer-networks/pipelined-rdt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/pipelined-rdt/</guid><description>&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">RDT3.0&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{RDT3.0}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is a functionally correct protocol but has performance issues. &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">RDT3.0&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{RDT3.0}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>’s performance problem is the fact that it is a stop and wait protocol.&lt;/p>
+&lt;p>The solution of this particular performance problem is simple: the sender is allowed to send multiple packets without waiting for acknowledgments. This technique is known as pipelining.&lt;/p>
+&lt;p>Pipelining has the following consequences:&lt;/p>
+&lt;ol>
+&lt;li>The range of sequence numbers must be increased for uniquely assigning sequence numbers to unacknowledged packets in transit.&lt;/li>
+&lt;li>Sender and Receiver sides have to buffer more than one packet. sender has to buffer transmitted packets that are not yet acknowledged.&lt;/li>
+&lt;li>Range of sequence numebrs and buffering requirements depend on the manner in which a data transfer protocol responds to lost, corrupted and delayed packets.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Go-Back-N (GBN):&lt;/strong>
+In GBN protocol, the sender is allowed to transmit multiple packets without waiting for an acknowledgement, but is constrained to have no more than some maximum allowable number &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>N&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">N&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>, of unacknowledged packets in the pipeline.&lt;/p></description></item><item><title>Connection Oriented Transport - TCP</title><link>https://Phoenix009.github.io/notes/computer-networks/connection-oriented-transport---tcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/connection-oriented-transport---tcp/</guid><description>&lt;p>TCP is said to be a &lt;mark>connection-oriented&lt;/mark> because before one application process can begin to send data to another, the two processes must first establish a connection using a “handshake”.&lt;/p>
+&lt;p>Provides a &lt;mark>full duplex communication&lt;/mark> that is always point-to-point, &lt;mark>multicasting is not possible with TCP&lt;/mark>.&lt;/p>
+&lt;p>The client first sends a special TCP segment; the server responds with a special TCP segment; and finally the client responds again with a third special segment.&lt;/p></description></item><item><title>Network Layer</title><link>https://Phoenix009.github.io/notes/computer-networks/network-layer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/network-layer/</guid><description>&lt;h3 id="forwarding-and-routing">Forwarding and Routing&lt;/h3>
+&lt;p>The role of the network layer is simple - To move packets from a sending host to a receiving host.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Forwarding&lt;/strong>: When a packet arrives at a routers input link, the router must move the packet to the appropriate output link.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Routing&lt;/strong>: The network layer must determine the route or the path taken by packets as they flow from a sender to a receiver. The algorithms that calculate these paths are referred to as routing algorithms.&lt;/p></description></item><item><title>Internet Protocol IP</title><link>https://Phoenix009.github.io/notes/computer-networks/internet-protocol-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/internet-protocol-ip/</guid><description>&lt;p>Internet addressing and forwarding are important components of the Internet Protocol (IP).&lt;/p>
+&lt;h3 id="internet-protocol-ip">Internet Protocol IP&lt;/h3>
+&lt;p>Internet addressing and forwarding are important components of the Internet Protocol (IP).&lt;/p>
+&lt;p>&lt;img src="https://Phoenix009.github.io/notes/computer-networks/images/netwokr_layer_functions.png" alt="netwokr_layer_functions" loading="lazy">&lt;/p>
+&lt;p>The Internet’s network layer has three major components.&lt;/p>
+&lt;ol>
+&lt;li>IP Protocol&lt;/li>
+&lt;li>Routing Component&lt;/li>
+&lt;li>Facility to report errors in datagrams and respond to requests of certain network layer information.&lt;/li>
+&lt;/ol>
+&lt;h3 id="datagram-format">Datagram Format:&lt;/h3>
+&lt;p>&lt;img src="https://Phoenix009.github.io/notes/computer-networks/images/ip4_datagram.png" alt="ip4_datagram" loading="lazy">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Version#&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Version\#}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> - &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">4b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{4b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> specify the IP Protocol version&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Header&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">Length&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Header Length}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> - &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">4b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{4b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> Header length is variable due to &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Options&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Options}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/p></description></item><item><title>Routing Algorithms</title><link>https://Phoenix009.github.io/notes/computer-networks/routing-algorithms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/routing-algorithms/</guid><description>&lt;p>Typically a host is attached directly to one router, the &lt;mark>default router&lt;/mark> for the host (aka. first-hop router). We refer to the default router of the source host as the source router and of the destination as destination router.&lt;/p>
+&lt;p>The purpose of a routing algorithm is then simple: given a set of routers, with links connecting the routers, a routing algorithm finds a “good” path from source to destination router.&lt;/p></description></item><item><title>Anycast</title><link>https://Phoenix009.github.io/notes/computer-networks/anycast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/anycast/</guid><description>&lt;ul>
+&lt;li>&lt;strong>Unicast&lt;/strong>: Communication between a single source and a single destination&lt;/li>
+&lt;li>&lt;strong>Multicast&lt;/strong>: Communication between a single source and multiple destinations
+&lt;ul>
+&lt;li>Useful for streaming and conferencing applications&lt;/li>
+&lt;li>Heavily used in IPv6 for signalling&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Anycast&lt;/strong>: Communication between a single source and ANY destination
+&lt;ul>
+&lt;li>Useful for communication to the closest server of a group of server&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ip-anycast">IP Anycast:&lt;/h2>
+&lt;p>For serving content from an anycast IP address we announce the same prefix from multiple locations in BGP.&lt;/p></description></item><item><title>Link Layer</title><link>https://Phoenix009.github.io/notes/computer-networks/link-layer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/link-layer/</guid><description>&lt;p>We will refer to any device that runs a link-layer protocol (such as hosts, routers, switches and WiFi access points) as a &lt;mark>node&lt;/mark>.&lt;/p>
+&lt;p>We will also refer to the communication channels that connect adjacent nodes along the communication paths as &lt;mark>links&lt;/mark>.&lt;/p>
+&lt;p>Over a given link, a transmitting node encapsulates the datagram in a link-layer &lt;mark>frame&lt;/mark> and transmits the frame into the link.&lt;/p>
+&lt;h2 id="where-is-the-link-layer-implemented">Where is the Link Layer Implemented?&lt;/h2>
+&lt;p>For the most part, the link layer is implemented in a network adapter, also sometimes known as the network interface card NIC.&lt;/p></description></item><item><title>Multimedia Networking</title><link>https://Phoenix009.github.io/notes/computer-networks/multimedia-networking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/multimedia-networking/</guid><description>&lt;h2 id="multimedia-networking-applications">Multimedia Networking Applications:&lt;/h2>
+&lt;p>We define a multimedia network application as any network application that employs audio or video.&lt;/p>
+&lt;h3 id="properties-of-video">Properties of Video:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>High Bit Rate&lt;/strong>: Video distributed over the internet typically ranges form 100kbps to 3Mbps. Thus, when designing networked video applications, the first thing we must keep in mind is the high bit rate.&lt;/li>
+&lt;li>&lt;strong>Video Compression:&lt;/strong> There are two types of redundancy in video, both of which can be exploited for video compression.
+&lt;ul>
+&lt;li>&lt;strong>Spatial Redundancy&lt;/strong>: is the redundancy within a given image&lt;/li>
+&lt;li>&lt;strong>Temporal Redundancy:&lt;/strong> reflects the repetitions from image to a subsequent image.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="properties-of-audio">Properties of Audio:&lt;/h3>
+&lt;h3 id="types-of-multimedia-network-applications">Types of Multimedia Network Applications:&lt;/h3>
+&lt;h4 id="streaming-stored-audio-and-video">Streaming Stored Audio and Video:&lt;/h4>
+&lt;p>The underlying media is prerecorded. these prerecorded medias are placed on servers and users send requests to the servers to view them. Streaming stored media has three key distinguishing features:&lt;/p></description></item><item><title>Datacenter Networks</title><link>https://Phoenix009.github.io/notes/computer-networks/datacenter-networks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/datacenter-networks/</guid><description>&lt;p>The hosts in datacenters, called &lt;mark>blades&lt;/mark> and resembling pizza boxes, are generally commodity hosts that include CPU, memory, and disk storage.&lt;/p>
+&lt;p>The hosts are stacked in &lt;mark>racks&lt;/mark>, with each rack typically having 20 to 40 blades. At the top of each rack there is a switch, aptly named the &lt;mark>Top of Rack (TOR) switch&lt;/mark>, that interconnects the hosts in the rack with each other and with other switches in the datacenter.&lt;/p></description></item><item><title>Software Defined Networking</title><link>https://Phoenix009.github.io/notes/computer-networks/software-defined-networking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/software-defined-networking/</guid><description>&lt;h2 id="traditional-computer-networks">Traditional Computer Networks:&lt;/h2>
+&lt;h3 id="data-plane">Data Plane:&lt;/h3>
+&lt;ul>
+&lt;li>Fast but dumb elements of the network. Perform forwarding, filtering, buffering etc.&lt;/li>
+&lt;/ul>
+&lt;h3 id="control-plane">Control Plane:&lt;/h3>
+&lt;ul>
+&lt;li>Consists of distributed and sophisticated algorithms.&lt;/li>
+&lt;li>Tracks topology changes, compute routes and installing forwarding rules.&lt;/li>
+&lt;li>Slow but smart&lt;/li>
+&lt;/ul>
+&lt;h3 id="management-plane">Management Plane:&lt;/h3>
+&lt;ul>
+&lt;li>Human time scale&lt;/li>
+&lt;li>Collect measurements and configure the equipment&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;/th>
+ &lt;th style="text-align: center">Data&lt;/th>
+ &lt;th style="text-align: center">Control&lt;/th>
+ &lt;th style="text-align: center">Management&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Time Scale&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">Packet(ns)&lt;/td>
+ &lt;td style="text-align: center">Event(10ms-1s)&lt;/td>
+ &lt;td style="text-align: center">Human (mins - hr)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Tasks&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">Forwarding, Buffering, filtering and scheduling&lt;/td>
+ &lt;td style="text-align: center">Routing, circuit set-up&lt;/td>
+ &lt;td style="text-align: center">Analysis configuration&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Location&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">Line-card Hardware&lt;/td>
+ &lt;td style="text-align: center">Router Software&lt;/td>
+ &lt;td style="text-align: center">Humans or scripts&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="sdn">SDN:&lt;/h2>
+&lt;p>The idea is to separate the data plane and control plane and provide an open standard API for their communication. Enables the network control to become directly programmable and the underlying infrastructure to be abstraction from applications and network services.&lt;/p></description></item><item><title>Design Principles</title><link>https://Phoenix009.github.io/notes/computer-networks/design-principles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/design-principles/</guid><description>&lt;h3 id="goals">Goals:&lt;/h3>
+&lt;ul>
+&lt;li>Identify, study common architectural components, protocol mechanisms, approaches we find in network architectures&lt;/li>
+&lt;/ul>
+&lt;h3 id="design-principles">Design Principles:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/computer-networks/state/#separation-of-control-and-data">Separation of data and control&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/computer-networks/state/#hard-state-vs-soft-state">Hard State vs Soft State&lt;/a>&lt;/li>
+&lt;li>Randomisation&lt;/li>
+&lt;li>Indirection&lt;/li>
+&lt;li>Network Virtualisation&lt;/li>
+&lt;li>Resource Sharing&lt;/li>
+&lt;li>Design for scale&lt;/li>
+&lt;/ul>
+&lt;h2 id="signalling">&lt;a href="https://Phoenix009.github.io/notes/computer-networks/signalling/">Signalling&lt;/a>&lt;/h2>
+&lt;h2 id="state">&lt;a href="https://Phoenix009.github.io/notes/computer-networks/state/">State&lt;/a>&lt;/h2>
+&lt;h2 id="internet-design-philosophy">Internet Design Philosophy:&lt;/h2>
+&lt;h3 id="survivability">Survivability:&lt;/h3>
+&lt;ul>
+&lt;li>Continue to operate even under network failures
+&lt;ul>
+&lt;li>As long as the network is not partitioned, two endpoints should be able to communicate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Maintain end-to-end transport state only at endpoints&lt;/li>
+&lt;li>Eliminates the problem of handling state inconsistency and performing state restoration&lt;/li>
+&lt;li>Stateless network architecture&lt;/li>
+&lt;/ul>
+&lt;h3 id="types-of-services">Types of Services:&lt;/h3>
+&lt;ul>
+&lt;li>datagram abstraction&lt;/li>
+&lt;li>Lowest common denominator on which services can be built - IP&lt;/li>
+&lt;li>Service differentiation was considered&lt;/li>
+&lt;/ul>
+&lt;h3 id="variety-of-networks">Variety of networks:&lt;/h3>
+&lt;ul>
+&lt;li>Internet was very successful to provide this feature&lt;/li>
+&lt;li>It requires minimal service from the underlying network. It requires the underlying network to deliver the packets with a &amp;ldquo;reasonable&amp;rdquo; probability of success&lt;/li>
+&lt;li>No requirement for Reliability and In-order delivery&lt;/li>
+&lt;/ul>
+&lt;h3 id="distributed-management">Distributed Management&lt;/h3>
+&lt;ul>
+&lt;li>Administrative Autonomy&lt;/li>
+&lt;/ul>
+&lt;h3 id="cost-effectiveness">Cost Effectiveness&lt;/h3>
+&lt;ul>
+&lt;li>Sources of Inefficiency
+&lt;ul>
+&lt;li>Headers&lt;/li>
+&lt;li>Retransmission&lt;/li>
+&lt;li>Routing&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>optimal performance was never a priority for design&lt;/li>
+&lt;/ul>
+&lt;h3 id="low-cost-of-attaching-a-new-host">Low cost of attaching a new host:&lt;/h3>
+&lt;ul>
+&lt;li>Not the best&lt;/li>
+&lt;li>Things are improving - DHCP auto configuration&lt;/li>
+&lt;/ul>
+&lt;h3 id="accountability">Accountability:&lt;/h3>
+&lt;ul>
+&lt;li>Anyone can share the packets in the internet&lt;/li>
+&lt;li>NO ACCOUNTABILITY&lt;/li>
+&lt;/ul></description></item><item><title>Signalling</title><link>https://Phoenix009.github.io/notes/computer-networks/signalling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/signalling/</guid><description>&lt;h3 id="signalling">Signalling:&lt;/h3>
+&lt;p>#definition Exchange of messages among network entities to enable/provide a service.&lt;/p>
+&lt;p>Signalling is about maintaining state. Exchange of information between network components required to provide and maintain a service&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ol>
+&lt;li>TCP Handshake (Connection setup and teardown)&lt;/li>
+&lt;li>RSVP (Resource Reservation Protocol)&lt;/li>
+&lt;li>SIP (Session Initiation Protocol)&lt;/li>
+&lt;/ol>
+&lt;h3 id="signalling-in-the-internet">Signalling in the Internet:&lt;/h3>
+&lt;p>No network signalling protocols in initial IP design =&lt;/p>
+&lt;ul>
+&lt;li>Connectionless (stateless forwarding by IP routers) +&lt;/li>
+&lt;li>best effort service
+However, Transport protocols need state and variable initialisation&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Application Layer protocols enable users to be reachable independent of the device and location.&lt;/em>&lt;/p></description></item><item><title>State</title><link>https://Phoenix009.github.io/notes/computer-networks/state/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/state/</guid><description>&lt;h2 id="separation-of-control-and-data">Separation of control and data&lt;/h2>
+&lt;p>&lt;em>Why?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Allows concurrent control and data flow&lt;/li>
+&lt;li>simplifies processing of data/control streams&lt;/li>
+&lt;li>Provide QoS appropriate for control/data streams&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Why not?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Separate channels complicate management, increases resource requirements&lt;/li>
+&lt;li>can increase latency&lt;/li>
+&lt;/ul>
+&lt;h2 id="maintaining-network-state">Maintaining network state&lt;/h2>
+&lt;p>#definition &lt;strong>State&lt;/strong>: Information stored in network nodes by network protocols&lt;/p>
+&lt;ul>
+&lt;li>Updated when network &amp;ldquo;conditions&amp;rdquo; change&lt;/li>
+&lt;li>Stored in multiple nodes&lt;/li>
+&lt;li>Often associated with end-systems generated call or sessions&lt;/li>
+&lt;/ul>
+&lt;p>In this context:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Sender&lt;/strong>: Node that generates signalling messages to install, keep-alive, remove state from other nodes&lt;/li>
+&lt;li>&lt;strong>Receiver&lt;/strong>: Node that creates, maintains, removes state based on signalling messages received from sender&lt;/li>
+&lt;/ul>
+&lt;h2 id="hard-state-vs-soft-state">Hard State vs Soft State&lt;/h2>
+&lt;h3 id="hard-state">Hard State:&lt;/h3>
+&lt;ul>
+&lt;li>State installed by receiver via &lt;mark>setup messages&lt;/mark> from sender&lt;/li>
+&lt;li>State removed by receiver via &lt;mark>teardown message&lt;/mark> from sender&lt;/li>
+&lt;/ul>
+&lt;h3 id="soft-state">Soft State:&lt;/h3>
+&lt;ul>
+&lt;li>State installed by receiver via setup message from sender&lt;/li>
+&lt;li>State removed by receiver via timeout&lt;/li>
+&lt;li>Sender sends periodic refresh message indicating receiver should continue to maintain state&lt;/li>
+&lt;/ul>
+&lt;h4 id="allows-easy-handling-of-changes">Allows &amp;ldquo;Easy&amp;rdquo; handling of changes:&lt;/h4>
+&lt;ul>
+&lt;li>No need for network to signal failure/change to end system&lt;/li>
+&lt;li>Less signalling than hard-state from network to end system&lt;/li>
+&lt;li>More signalling than hard-state from end-system to network for refreshes&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>How to set the refresh/timeout timers?&lt;/em>&lt;/p></description></item><item><title>RSVP</title><link>https://Phoenix009.github.io/notes/computer-networks/rsvp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/rsvp/</guid><description>&lt;h2 id="design-goals">Design Goals:&lt;/h2>
+&lt;ul>
+&lt;li>Accommodate heterogeneous receivers&lt;/li>
+&lt;li>Accommodate different applications with different resource requirements&lt;/li>
+&lt;li>Make multicast a first class service, with adaptation to multicast group membership&lt;/li>
+&lt;li>Leverage existing multicast/unicast routing with adaptation to changes in underlying unicast, multicast routes&lt;/li>
+&lt;li>Control protocol overhead to grow linearly as # receivers&lt;/li>
+&lt;li>modular design for heterogeneous underlying technologies&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview-of-operation">Overview of Operation:&lt;/h2>
+&lt;h3 id="1-senders-and-receivers-join-a-multicast-group">1. Senders and receivers join a multicast group&lt;/h3>
+&lt;ul>
+&lt;li>Done outside of RSVP&lt;/li>
+&lt;li>Senders need not join group&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-sender-to-network-signalling">2. Sender-to-Network signalling:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Path Message&lt;/strong>: Communicates sender info, and reverse-path-to-sender routing info&lt;/li>
+&lt;li>Path teardown: delete senders path state from routers&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-receiver-to-network-signalling">3. Receiver-to-Network signalling:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Reservation Message&lt;/strong>: Reservations flow upstream from receiver to sender, reserving resources, creating additional receiver related state at routers&lt;/li>
+&lt;li>Reservation teardown: remove receiver reservations&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-network-to-end-system-signalling">4. Network-to-End system signalling:&lt;/h3>
+&lt;ul>
+&lt;li>Path Error&lt;/li>
+&lt;li>Reservation Error&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>RSVP uses soft-state&lt;/strong>:&lt;/p></description></item><item><title>Mobility and Indirection</title><link>https://Phoenix009.github.io/notes/computer-networks/mobility-and-indirection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/mobility-and-indirection/</guid><description>&lt;p>&lt;em>How do you contact a mobile node?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Mobile node moves from network to network&lt;/li>
+&lt;li>Correspondents want to send packets to mobile node&lt;/li>
+&lt;/ul>
+&lt;p>Two approaches:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Indirect routing&lt;/strong>:
+Communication from correspondent to mobile node goes through home agent&lt;/li>
+&lt;li>&lt;strong>Direct routing&lt;/strong>:
+Correspondent gets foreign address of mobile, sends directly to mobile&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;strong>Home network&lt;/strong>: Permanent home of mobile&lt;/li>
+&lt;li>&lt;strong>Permanent address&lt;/strong>: address in home network, can always be used to reach mobile&lt;/li>
+&lt;li>&lt;strong>Home agent&lt;/strong>: entity that will perform mobility functions on behalf of mobile, when mobile is remote&lt;/li>
+&lt;li>&lt;strong>Visited Network:&lt;/strong> Network in which mobile currently resides&lt;/li>
+&lt;li>&lt;strong>Care of address:&lt;/strong> Address in visited network&lt;/li>
+&lt;li>&lt;strong>Foreign agent:&lt;/strong> Entity in visited network that performs mobility functions on behalf of mobile&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Registration:&lt;/strong>&lt;/p></description></item><item><title>IOT</title><link>https://Phoenix009.github.io/notes/computer-networks/iot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/iot/</guid><description>&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>&amp;ldquo;Things&amp;rdquo; getting connected to the Internet and getting &amp;ldquo;Smart&amp;rdquo;&lt;/p>
+&lt;p>What is needed for IoT?:&lt;/p>
+&lt;ul>
+&lt;li>&amp;ldquo;Smart&amp;rdquo; devices&lt;/li>
+&lt;li>Communication&lt;/li>
+&lt;li>Applications&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Why connect things to the internet?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>IoT devices have power and CPU constraints&lt;/li>
+&lt;li>Offloading of complicated tasks from IoT devices allows smaller and more energy efficient devices&lt;/li>
+&lt;li>Host &amp;lsquo;Smart&amp;rsquo; part of &amp;lsquo;Dumb&amp;rsquo; devices&lt;/li>
+&lt;li>Cloud applications can be updated at will of vendor&lt;/li>
+&lt;li>No user interaction needed for updates&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Simplified Setup for IoT:&lt;/strong>
+Let all devices connect to the cloud with known endpoints controlled by the vendor&lt;/p></description></item><item><title>QoS - Quality of Service</title><link>https://Phoenix009.github.io/notes/computer-networks/qos---quality-of-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/qos---quality-of-service/</guid><description>&lt;h2 id="network-support-for-multimedia">Network support for Multimedia&lt;/h2>
+&lt;p>&lt;img src="https://Phoenix009.github.io/notes/computer-networks/images/qos.svg" alt="qos" loading="lazy">&lt;/p>
+&lt;h3 id="dimensioning-best-effort-networks">Dimensioning Best Effort Networks:&lt;/h3>
+&lt;p>&lt;strong>Approach&lt;/strong>: Deploy enough link capacity so that congestion does not occur, and multimedia traffic flows without delay or loss&lt;/p>
+&lt;ul>
+&lt;li>low complexity of network mechanisms&lt;/li>
+&lt;li>Challenge: &lt;em>How much bandwidth is enough?&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h4 id="providing-multiple-classes-of-service">Providing multiple classes of service:&lt;/h4>
+&lt;p>The earlier approach is a &amp;ldquo;one-size-fits-all&amp;rdquo; approach.&lt;/p>
+&lt;p>Alternative: provide multiple classes of services&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Partition traffic into classes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Network treats different classes of traffic differently&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;mark>Packet marking needed&lt;/mark> for router to distinguish between different classes, and new router policy to treat packets accordingly.&lt;/p></description></item><item><title>Real Time Protocol</title><link>https://Phoenix009.github.io/notes/computer-networks/real-time-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/real-time-protocol/</guid><description>&lt;p>RTP runs in end-systems.&lt;/p>
+&lt;h3 id="rtp-qos">RTP QoS:&lt;/h3>
+&lt;ul>
+&lt;li>Protocol does not provide any QoS guarantees&lt;/li>
+&lt;li>RTP encapsulation is only seen at the end systems. Routers provide best-effort-service making no special effort&lt;/li>
+&lt;/ul>
+&lt;h3 id="rtp-on-top-of-udp">RTP on top of UDP&lt;/h3>
+&lt;ul>
+&lt;li>RTP packets are encapsulated in UDP segments&lt;/li>
+&lt;li>RTP libraries provide transport-layer interface that extends UDP
+&lt;ul>
+&lt;li>Port numbers, IP addresses&lt;/li>
+&lt;li>Payload type identification&lt;/li>
+&lt;li>Packet sequence numbering&lt;/li>
+&lt;li>time stamping&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Application collects encoded data in chunks, ex: every 20ms 160B in a chunk&lt;/li>
+&lt;li>Audio chunk + RTP Header form RTP packet, encapsulated in UDP segment&lt;/li>
+&lt;li>RTP header indicates type of audio encoding in each packet&lt;/li>
+&lt;li>Header also contains sequence number and time stamps&lt;/li>
+&lt;/ul>
+&lt;h3 id="rtp-header">RTP Header:&lt;/h3>
+&lt;p>&lt;img src="https://Phoenix009.github.io/notes/computer-networks/images/RTP-header.svg" alt="RTP-header" loading="lazy">&lt;/p></description></item><item><title>Session Initiation Protocol</title><link>https://Phoenix009.github.io/notes/computer-networks/session-initiation-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/session-initiation-protocol/</guid><description>&lt;p>All telephone calls, video conference calls take place over internet&lt;/p>
+&lt;ul>
+&lt;li>people identified by names or email addresses rather than phone numbers&lt;/li>
+&lt;li>Can reach callee no matter where callee roams, no matter what IP device callee is currently using&lt;/li>
+&lt;/ul>
+&lt;h3 id="services">Services:&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>SIP provides mechanisms for call setup&lt;/p>
+&lt;ul>
+&lt;li>For caller to let callee know she wants to establish a call&lt;/li>
+&lt;li>Callee can agree on media type and encoding&lt;/li>
+&lt;li>End call&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Determine current IP address of callee&lt;/p></description></item><item><title>cheatsheet</title><link>https://Phoenix009.github.io/notes/computer-networks/cheatsheet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/computer-networks/cheatsheet/</guid><description>&lt;h4 id="application-layer">Application Layer:&lt;/h4>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Type&lt;/th>
+ &lt;th>Name&lt;/th>
+ &lt;th>Value&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>A&lt;/code>&lt;/td>
+ &lt;td>hostname&lt;/td>
+ &lt;td>IPv4 Address&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>AAAA&lt;/code>&lt;/td>
+ &lt;td>hostname&lt;/td>
+ &lt;td>IPv6 Address&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>NS&lt;/code>&lt;/td>
+ &lt;td>Domain&lt;/td>
+ &lt;td>hostname of Authoritative DNS Server&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>CNAME&lt;/code>&lt;/td>
+ &lt;td>alias hostname&lt;/td>
+ &lt;td>Canonical hostname&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>PTR&lt;/code>&lt;/td>
+ &lt;td>IP Address&lt;/td>
+ &lt;td>hostname&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="transport-layer">Transport Layer:&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>UDP header&lt;/strong>:&lt;/p>
+&lt;ol>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Port&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">number&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Port number}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> allow multiplexing and demultiplexing.&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">length&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{length}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> field specifies the number of bytes in the UDP segment (header + data)&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Checksum&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Checksum}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is used to check whether errors have been introduced in the segment.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>TCP Header&lt;/strong>:&lt;/p>
+&lt;ol>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Source&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">Port#&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Source Port\#}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>, &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Destination&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">Port#&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Destination Port\#}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>: for multiplexing and demultiplexing&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">SEQ#&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{SEQ\#}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>, &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">ACK#&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{ACK\#}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>: for implementing &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">RDT&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{RDT}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Header&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">length&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">4b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Header length 4b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>: specifies the length of the TCP header in &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">32b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{32b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> words. Header length can be variable due to the &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Options&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Options}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> field.&lt;/li>
+&lt;li>The &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">flag&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{flag}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> field contains &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">6b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{6b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>.
+&lt;ol>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">ACK&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{ACK}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> the segment contains an ACK&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">RST&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{RST}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>, &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">SYN&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{SYN}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> and &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">FIN&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{FIN}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> are used for connection setup and teardown&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">PSH&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{PSH}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> indicates the receiver should pass the data to the upper layer immediately.&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">URG&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{URG}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is used to indicate there is data in the segment that the sending side upper layer has marked as urgent.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext mathvariant="monospace">Receive&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">Window&lt;/mtext>&lt;mtext> &lt;/mtext>&lt;mtext mathvariant="monospace">16b&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\texttt{Receive Window 16b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is used for flow control. indicates the number of bytes the receiver is willing to accept.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Timeout&lt;/strong>:&lt;/p></description></item></channel></rss>

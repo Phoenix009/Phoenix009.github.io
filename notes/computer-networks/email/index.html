@@ -1,0 +1,48 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Email | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>Email</h1><div class=content><p>It has three major components:</p><ol><li><p>User Agent
+Allows users to read, reply, forward and compose messages.</p></li><li><p>Mail Servers
+Form the core of email infrastructure</p></li><li><p>SMTP - Simple Message Transfer Protocol
+Is the principal application-layer protocol for email. Uses reliable data transfer service of TCP. Uses a client-server architecture. Each mail server behaves as both a client and a server.</p></li></ol><h3 id=smtp---simple-message-transfer-protocol>SMTP - Simple Message Transfer Protocol:</h3><p>SMTP transfers messages from senders mail servers to the recipients mail server.</p><p>We will take a closer look at how SMTP transfers a message from a sending mail server to a receiving mail server.</p><ol><li>the client creates a <mark>TCP connection on port 25</mark> at the server</li><li>the server and client perform application-layer handshaking<ul><li>SMTP client indicates the email address of the sender and recipient</li></ul></li><li>client sends the message<ul><li>SMTP relies on TCP to reliably send the message without errors</li></ul></li><li>instructs TCP to close the connection</li></ol><p>The following messages are exchanged between the client and the server.</p><pre tabindex=0><code>C: HELO &lt;hostname&gt;  
+S: 250 Hello &lt;hostname&gt;, pleased to meet you  
+
+// For each message
+C: MAIL FROM: &lt;senders_address&gt;  
+S: 250 &lt;senders_address&gt; ... Sender ok  
+C: RCPT TO: &lt;recipient_address&gt;  
+S: 250 &lt;recipient_address&gt; ... Recipient ok  
+C: DATA  
+S: 354 Enter mail, end with “.” on a line by itself 
+C: &lt;message&gt;  
+C: &lt;message&gt;  
+C: .  
+S: 250 Message accepted for delivery
+// endfor
+
+C: QUIT
+</code></pre><p>As part of the dialogue, the client issues five commands:
+HELO, MAIL FROM, RCPT TO, DATA and QUIT.</p><p><mark>SMTP uses persistent connections</mark>: If the sending mail server has several messages to sent to the same receiving mail server, it can send all of the messages over the same TCP connection.</p><h3 id=mail-access-protocols>Mail Access Protocols:</h3><p>SMTP is used to transfer mails from the senders mail server to recipients mail server; SMTP is also used to transfer mail from the senders user agent to the senders mail server.</p><p>SMTP cannot be used by the recipients user agent obtain messages because it is a pull operation. A <mark>mail access protocol</mark> is used to transfer mail from the recipients mail server to recipients user agent.</p><h4 id=pop3>POP3:</h4><p>The protocol is simple and thus its functionality is rather limited.</p><p>POP3 begins when the user agent opens a TCP connection to the mail server on <mark>port 110</mark>. POP3 progresses through three phases: authorisation, transaction and update.</p><p>During the authorisation phase: the user agent sends a username and a password to authenticate the user.</p><p>During the transaction phase: the user agent retrieves messages and can also mark messages for deletion.</p><p>The update phase starts after the user agents issues the quit command. During this phase all the messages marked for deletion are deleted.</p><p>During a POP3 session the server maintains some state information: primarily, it keeps track of which user messages are to be deleted.</p><h4 id=imap>IMAP:</h4><p>IMAP has more features than POP3. Associates every message with a folder. Recipient can then move the message into a new user-created folder, read the message, delete it and so on.</p><p>Important feature of IMAP is that is has commands to allow user agent to obtain components of messages, eg: header.</p></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/dns---internets-directory-service/>← DNS - Internets Directory Service</a>
+<a class=next href=/notes/computer-networks/socket-programming/>Socket Programming →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

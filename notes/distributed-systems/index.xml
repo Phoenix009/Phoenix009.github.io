@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Distributed Systems on Jaideep M. More</title><link>https://Phoenix009.github.io/notes/distributed-systems/</link><description>Recent content in Distributed Systems on Jaideep M. More</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://Phoenix009.github.io/notes/distributed-systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Concurrency</title><link>https://Phoenix009.github.io/notes/distributed-systems/concurrency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/concurrency/</guid><description>&lt;p>Read: &lt;a href="https://Phoenix009.github.io/notes/distributed-systems/papers-summary/programming-with-threads/">Programming with Threads&lt;/a>&lt;/p></description></item><item><title>Remote Procedure Call</title><link>https://Phoenix009.github.io/notes/distributed-systems/remote-procedure-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/remote-procedure-call/</guid><description>&lt;p>Makes the programming of distributed systems look similar, if not identical, to conventional programming - achieving high level of distribution transparency.&lt;/p>
+&lt;h4 id="rpc-call-semantics">RPC Call Semantics:&lt;/h4>
+&lt;p>Request-reply protocols can be implemented in different ways to provide different delivery guarantees. The main choices are:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;mark>Retry Request message&lt;/mark>: Retransmit the request until either a reply is received or the server is assumed to have failed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;mark>Duplicate Filtering&lt;/mark>: Controls when retransmissions are used and whether to filter out duplicate requests at the server.&lt;/p></description></item><item><title>Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/consistency/</guid><description>&lt;p>Read: &lt;a href="https://jepsen.io/consistency" rel="noopener">https://jepsen.io/consistency&lt;/a>&lt;/p>
+&lt;h3 id="operations">Operations:&lt;/h3>
+&lt;p>An operation is a transition from state to state. A single variable system might have operations like &lt;code>read&lt;/code> and &lt;code>write&lt;/code>.&lt;/p>
+&lt;h3 id="consistency">Consistency:&lt;/h3>
+&lt;p>The rules of what operations can run in parallel and how to combine the results of these operations.&lt;/p>
+&lt;h3 id="history">History:&lt;/h3>
+&lt;p>A History is a collection of operations. We represent history as an ordered list of invocation and completion operations, splitting each operation into two.&lt;/p>
+&lt;h3 id="consistency-models">Consistency Models:&lt;/h3>
+&lt;p>A consistency model is a set of histories. We use consistency models to define which histories are &amp;ldquo;good&amp;rdquo; or &amp;ldquo;legal&amp;rdquo; in a system.&lt;/p></description></item><item><title>Strict Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/strict-consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/strict-consistency/</guid><description>&lt;p>Rule: Loads will always see the most recent Store made by any machine&lt;/p>
+&lt;p>Under strict consistency rules:&lt;/p>
+&lt;p>The instant any process performs &lt;code>write(var, 1)&lt;/code>; all the other processes must see &lt;code>read(var) = 1&lt;/code>.&lt;/p>
+&lt;p>Suppose the time diff between the &lt;code>write&lt;/code> and &lt;code>read&lt;/code> is infinitely small &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>ϵ&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">\epsilon&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>. This implies that the updates must propagate to all the processes faster than the speed of light.&lt;/p>
+&lt;p>Thus, Strict consistency is not realistic for distributed systems.&lt;/p></description></item><item><title>Sequential Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/sequential-consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/sequential-consistency/</guid><description>&lt;p>Our system may execute the operations in a different order than is specified.&lt;/p>
+&lt;p>The execution is correct if the result of the execution is the same as if the operations had been executed in the order they were specified.&lt;/p>
+&lt;p>The result of any execution is the same if the operations of all the processors were executed in some sequential order, and the operation of each individual processor appear in this sequence in the order specified.&lt;/p></description></item><item><title>Release Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/release-consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/release-consistency/</guid><description>&lt;p>The use of global locks for all address space can attain sequential consistency if the locks are used properly.&lt;/p>
+&lt;p>However, use of global locks leads to no concurrency at all. Only one machine can access memory at a time. This issue can be addressed by controlling the lock granularity.&lt;/p>
+&lt;p>&lt;mark>Variable lock granularity&lt;/mark> approach uses one lock per logical object.&lt;/p>
+&lt;p>Locks alone do not provide consistency. &lt;mark>Updates must propagate when a lock is acquired or release by another party to ensure consistency&lt;/mark>.&lt;/p></description></item><item><title>Causal Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/causal-consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/causal-consistency/</guid><description>&lt;p>Sequential consistency and Release Consistency can totally order all operations but need some central coordination. eg: with locks&lt;/p>
+&lt;p>This does not work with network partitioning, what is the node holding the lock dies?&lt;/p>
+&lt;p>Causal consistency allows a replica to make state updates without pulling updates from other replicas. However if we did derive from some other replicas stats, we should pass this information on when someone pulls from us.&lt;/p>
+&lt;p>A system is causally consistent if any two causally related events are seen by all the nodes in their causal order.&lt;/p></description></item><item><title>Eventual Consistency</title><link>https://Phoenix009.github.io/notes/distributed-systems/eventual-consistency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/eventual-consistency/</guid><description>&lt;h3 id="lamport-clocks">Lamport Clocks:&lt;/h3>
+&lt;p>Partially synchronized logical clock per replica. P&amp;rsquo;s current logical clock denoted LC[P]&lt;/p>
+&lt;p>Every event is timestamped with local LC. we want the following property to hold: If event B is causally dependent on A then B.t &amp;gt; A.t
+Timestamps strictly increase along a causal chain.&lt;/p>
+&lt;h4 id="implementation">Implementation:&lt;/h4>
+&lt;p>Every sync from P to Q carries LC[P]. It tells Q what P&amp;rsquo;s logical time at the time of sync was.&lt;/p>
+&lt;p>When Q receives a message from P, it sets
+LC[Q] = max(LC[Q], LC[P]).&lt;/p></description></item><item><title>Map Reduce</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/map-reduce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/map-reduce/</guid><description>&lt;h3 id="introduction">Introduction:&lt;/h3>
+&lt;p>The issues of how to parallelise the computation, distribute the data, and handle failures conspire to obscure the original simple computation with large amounts of complex code to deal with these issues.&lt;/p>
+&lt;p>Map Reduce is a new abstraction that allows us to express the simple computations we were trying to perform but hides the messy details of parallelisation, fault-tolerance, data distribution and load balancing in a library.&lt;/p>
+&lt;h3 id="programming-model">Programming Model:&lt;/h3>
+&lt;p>The user of the MapReduce library expresses the computation as two functions: Map and Reduce.&lt;/p></description></item><item><title>GFS - Google File System</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/gfs---google-file-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/gfs---google-file-system/</guid><description>&lt;h2 id="design-overview">Design Overview:&lt;/h2>
+&lt;h3 id="assumptions">Assumptions:&lt;/h3>
+&lt;ul>
+&lt;li>The system is built from many inexpensive commodity components that often fail.&lt;/li>
+&lt;li>Multi-GB files are the common case and should be managed efficiently. Small files must be supported, but we need not optimise for them.&lt;/li>
+&lt;li>The workloads primarily consist of two kinds of reads: large streaming reads and small random reads.&lt;/li>
+&lt;li>The workloads also have many large, sequential writes that append data to files.&lt;/li>
+&lt;li>System must efficiently implement well defined semantics for multiple clients that concurrently append to the same file&lt;/li>
+&lt;li>High sustained bandwidth is more important than low latency.&lt;/li>
+&lt;/ul>
+&lt;h3 id="interface">Interface:&lt;/h3>
+&lt;p>GFS provides a familiar file system interface though it does not implement a standard API such as POSIX. We support the usual operations to &lt;em>create&lt;/em>, &lt;em>delete&lt;/em>, &lt;em>open&lt;/em>, &lt;em>close&lt;/em>, &lt;em>read&lt;/em> and &lt;em>write&lt;/em>.&lt;/p></description></item><item><title>Distributed Transactions</title><link>https://Phoenix009.github.io/notes/distributed-systems/distributed-transactions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/distributed-transactions/</guid><description>&lt;p>Read: &lt;a href="https://Phoenix009.github.io/notes/distributed-systems/papers-summary/r_star_distributed_db/">R* Distributed DB&lt;/a>&lt;/p></description></item><item><title>Fault Tolerance</title><link>https://Phoenix009.github.io/notes/distributed-systems/fault-tolerance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/fault-tolerance/</guid><description>&lt;ul>
+&lt;li>Allows systems to keep running even under failures&lt;/li>
+&lt;li>Needed to ensure:
+&lt;ul>
+&lt;li>High availability systems&lt;/li>
+&lt;li>Mission critical systems&lt;/li>
+&lt;li>Life critical systems&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Can be done using:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/distributed-systems/write-ahead-logs/">Write Ahead Logs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/distributed-systems/replication/">Replication&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/distributed-systems/chain-replication/">Chain Replication&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>PAXOS</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/paxos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/paxos/</guid><description>&lt;h3 id="problem">Problem:&lt;/h3>
+&lt;p>A collection of processes that can propose values. Consensus ensures that a single one among the proposed value is chosen.&lt;/p>
+&lt;p>We have three agents in the consensus algorithm&lt;/p>
+&lt;ul>
+&lt;li>proposers&lt;/li>
+&lt;li>acceptors&lt;/li>
+&lt;li>learners&lt;/li>
+&lt;/ul>
+&lt;p>WE use the customary asynchronous, non-Byzantine model in which:&lt;/p>
+&lt;ul>
+&lt;li>Agents operate at arbitrary speeds, may fail by stopping and may restart.&lt;/li>
+&lt;li>Messages take arbitrary long to be delivered, can be duplicated, and can be lost, but they are not corrupted.&lt;/li>
+&lt;/ul>
+&lt;h3 id="choosing-a-value">Choosing a Value:&lt;/h3>
+&lt;p>We have multiple acceptor agents. A proposer sends a proposed value to a set of acceptors. An acceptor may accept the proposed value. A value is chosen when a majority of acceptors have accepted the value.&lt;/p></description></item><item><title>ZooKeeper</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/zookeeper/</guid><description>&lt;ul>
+&lt;li>ZooKeeper, a service for coordinating processes of distributed applications.&lt;/li>
+&lt;li>The ZooKeeper interface enables a high-performance service implementation.&lt;/li>
+&lt;li>In addition to the wait-free property, ZooKeeper provides a per client guarantee of FIFO execution of requests and linearisability for all requests that change the ZooKeeper state.&lt;/li>
+&lt;/ul>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>Large-scale distributed applications require different forms of coordination.&lt;/p>
+&lt;ul>
+&lt;li>Configuration is one of the most basic forms of coordination&lt;/li>
+&lt;li>Group membership and leader election are also common in distributed systems&lt;/li>
+&lt;li>Locks constitute a powerful coordination primitive that implement mutually exclusive access to critical resources.&lt;/li>
+&lt;/ul>
+&lt;p>One approach to coordination is to develop services for each of the different coordination needs.&lt;/p></description></item><item><title>Distributed Hash Tables</title><link>https://Phoenix009.github.io/notes/distributed-systems/distributed-hash-tables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/distributed-hash-tables/</guid><description>&lt;p>Read: &lt;a href="https://Phoenix009.github.io/notes/distributed-systems/papers-summary/chord/">Chord&lt;/a>&lt;/p></description></item><item><title>Multi Agent Systems</title><link>https://Phoenix009.github.io/notes/distributed-systems/multi-agent-systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/multi-agent-systems/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>When a server is distributing a large file with &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>F&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">F&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> bits to &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>N&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">N&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> receivers at rate &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;msub>&lt;mi>u&lt;/mi>&lt;mi>s&lt;/mi>&lt;/msub>&lt;/mrow>&lt;annotation encoding="application/x-tex">u_s&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/p>
+&lt;ul>
+&lt;li>Time required = &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>N&lt;/mi>&lt;mi>F&lt;/mi>&lt;mi mathvariant="normal">/&lt;/mi>&lt;msub>&lt;mi>u&lt;/mi>&lt;mi>s&lt;/mi>&lt;/msub>&lt;/mrow>&lt;annotation encoding="application/x-tex">NF/u_s&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;/ul>
+&lt;p>Receiving the data at the slowest receiver:&lt;/p>
+&lt;ul>
+&lt;li>slowest receiver has download rate &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;msub>&lt;mi>d&lt;/mi>&lt;mi>min&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;/msub>&lt;mo>=&lt;/mo>&lt;mi>min&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;mo stretchy="false">(&lt;/mo>&lt;msub>&lt;mi>d&lt;/mi>&lt;mi>i&lt;/mi>&lt;/msub>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">d_{\min} = \min(d_i)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>Time required = &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>F&lt;/mi>&lt;mi mathvariant="normal">/&lt;/mi>&lt;msub>&lt;mi>d&lt;/mi>&lt;mi>min&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;/msub>&lt;/mrow>&lt;annotation encoding="application/x-tex">F/d_{\min}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;/ul>
+&lt;p>Thus, File Distribution Time:
+&lt;/p>
+&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">&lt;semantics>&lt;mrow>&lt;mi>max&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;mo stretchy="false">{&lt;/mo>&lt;mfrac>&lt;mrow>&lt;mi>N&lt;/mi>&lt;mi>F&lt;/mi>&lt;/mrow>&lt;msub>&lt;mi>u&lt;/mi>&lt;mi>s&lt;/mi>&lt;/msub>&lt;/mfrac>&lt;mo separator="true">,&lt;/mo>&lt;mfrac>&lt;mi>F&lt;/mi>&lt;msub>&lt;mi>d&lt;/mi>&lt;mi>min&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;/msub>&lt;/mfrac>&lt;mo stretchy="false">}&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">\max\{\frac{NF}{u_s}, \frac{F}{d_{\min}}\}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;p>
+We can speed up the file distribution by:&lt;/p>
+&lt;ol>
+&lt;li>Increasing the server upload rate: requires higher link bandwidth, multiple servers&lt;/li>
+&lt;li>&lt;strong>Have the receivers help&lt;/strong>: Receivers redistribute to other receivers&lt;/li>
+&lt;/ol>
+&lt;p>Upload time using all upload resources:&lt;/p></description></item><item><title>Blockchain</title><link>https://Phoenix009.github.io/notes/distributed-systems/blockchain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/blockchain/</guid><description>&lt;p>Byzantine Faults?
+Byzantine Fault Tolerance&lt;/p>
+&lt;p>Problems:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Forgery: Sign transactions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Double Spending: Ledger.
+Nodes verify each block to check for double spending?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Theft:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Transaction:
+&lt;code>&amp;lt;destination-public&amp;gt;, &amp;lt;transaction-id&amp;gt;, &amp;lt;source-signature&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Solutions:&lt;/p>
+&lt;ul>
+&lt;li>Forgery: Assumes participants keep their private key secure. Signature can verify transactions&lt;/li>
+&lt;li>Double Spending: Public Log is required to check if the referred source transaction of bitcoin is not used twice
+&lt;ul>
+&lt;li>Consensus is required to agree upon a common history of transactions. Consistency is required&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Approach for Consensus:
+1. Centralized Server: Byzantine Fault
+2. Centralized server only to store logs: server might provide different view of logs to different clients&lt;/p></description></item><item><title>Big Data</title><link>https://Phoenix009.github.io/notes/distributed-systems/big-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/big-data/</guid><description>&lt;p>Read: &lt;a href="https://Phoenix009.github.io/notes/distributed-systems/papers-summary/spark/">Spark&lt;/a>, &lt;a href="https://Phoenix009.github.io/notes/distributed-systems/papers-summary/naiad/">Naiad&lt;/a>&lt;/p></description></item><item><title>Federated Learning</title><link>https://Phoenix009.github.io/notes/distributed-systems/federated-learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/federated-learning/</guid><description>&lt;p>We propose an alternative that leaves the training data distributed on the mobile devices, and learns a shared model by aggregating locally-computed updates. We term this decentralised approach &lt;mark>Federated Learning&lt;/mark>.&lt;/p>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>A principal advantage of this approach is the decoupling of model training from the need for direct access to the raw training data.&lt;/p>
+&lt;p>Our primary contributions are&lt;/p>
+&lt;ol>
+&lt;li>the identification of the problem of &lt;mark>training on decentralised data&lt;/mark> from mobile devices as an important research direction;&lt;/li>
+&lt;li>the selection of a straightforward and practical algorithm that can be applied to this setting; and&lt;/li>
+&lt;li>an extensive empirical evaluation of the proposed approach.&lt;/li>
+&lt;/ol>
+&lt;p>Federated learning has distinct privacy advantages compared to datacenter training on persisted data.&lt;/p></description></item><item><title>Security</title><link>https://Phoenix009.github.io/notes/distributed-systems/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/security/</guid><description>&lt;p>In the context of distributed systems, Security is the science and art of building &lt;mark>distributed systems that maintain their properties even when a subset of nodes are malicious or adversarial or &lt;em>Byzantine&lt;/em>&lt;/mark>.&lt;/p>
+&lt;p>&lt;strong>Fail-stop vs malicious behaviour&lt;/strong>: Malicious behaviour contrasts with fail-stop behaviour, where a node either follows its role, or just stops participating (it never does any of the above)&lt;/p>
+&lt;p>A node is &lt;em>malicious&lt;/em> if we cannot assume anything about its behaviour. In particular, it may behave in the worst possible way needed to break the properties of our distributed system.&lt;/p></description></item><item><title>Important ideas and concepts</title><link>https://Phoenix009.github.io/notes/distributed-systems/important-ideas-and-concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/important-ideas-and-concepts/</guid><description>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>RPC - remote procedure call&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Helps to invoke procedures on a remote server&lt;/li>
+&lt;li>Makes it appear to be like an ordinary procedure call&lt;/li>
+&lt;li>Uses client, client stub, RPCRuntime, server stub and server&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>RPC Semantics&lt;/strong>:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>At-least-once&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Retransmit message: YES&lt;/li>
+&lt;li>Duplicate Filtering: NO&lt;/li>
+&lt;li>Re-execute procedures&lt;/li>
+&lt;li>Suitable for operations that do not update state&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>At-most-once&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Retransmit message: YES&lt;/li>
+&lt;li>Duplicate filtering: YES&lt;/li>
+&lt;li>Retransmit Reply&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Strict Consistency&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Loads will always see most recent store made by any machine&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Linearizablity&lt;/strong>:&lt;/p></description></item><item><title>Bayou</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/bayou/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/bayou/</guid><description>&lt;h3 id="introduction">Introduction:&lt;/h3>
+&lt;p>The Bayou replicated storage system was designed to support a variety of non-real-time collaborative applications.&lt;/p>
+&lt;p>Bayou storage system provides an infrastructure for collaborative applications that manages the conflicts that arise due to concurrent activity while relying on weak connectivity.&lt;/p>
+&lt;p>Bayou design requires only occasional, pair-wise communication. Groups of computers may be partitioned away from the rest of the system yet remain connected to one another. supporting disconnected workgroups is a central goal of the Bayou system.&lt;/p></description></item><item><title>BitTorrent</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/bittorrent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/bittorrent/</guid><description>&lt;h2 id="what-bittorrent-does">What BitTorrent Does:&lt;/h2>
+&lt;p>When a file is made available using HTTP, all upload cost is placed on the hosting machine.&lt;/p>
+&lt;p>With BitTorrent, when multiple people are downloading the same file at the same time, they upload pieces of the file to each other.&lt;/p>
+&lt;p>This &lt;mark>redistributes the cost of upload to downloaders&lt;/mark>, (where it is often not even metered), thus making hosting a file with a potentially unlimited number of downloaders affordable.&lt;/p></description></item><item><title>Byzantine Fault Tolerance</title><link>https://Phoenix009.github.io/notes/distributed-systems/byzantine-fault-tolerance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/byzantine-fault-tolerance/</guid><description>&lt;p>Algorithm must guarantee:&lt;/p>
+&lt;ol>
+&lt;li>All loyal generals decide upon the same plan of action.&lt;/li>
+&lt;li>A small number of traitors cannot cause the loyal generals to adopt a bad plan.&lt;/li>
+&lt;/ol></description></item><item><title>Cedar file System - Group commit</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/cedar-file-system---group-commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/cedar-file-system---group-commit/</guid><description>&lt;ul>
+&lt;li>The system uses a log, as do most database systems, to recover metadata about the file system.&lt;/li>
+&lt;li>To gain performance, it uses &lt;mark>group commit&lt;/mark>, a concept derived from high performance database systems.&lt;/li>
+&lt;/ul>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>File systems ought to provide :&lt;/p>
+&lt;ol>
+&lt;li>good performance,&lt;/li>
+&lt;li>rapid crash recovery, and&lt;/li>
+&lt;li>robustness.&lt;/li>
+&lt;/ol>
+&lt;p>This paper will discuss four implementation approaches used to achieve these goals:&lt;/p>
+&lt;ol>
+&lt;li>log-based recovery for meta data&lt;/li>
+&lt;li>use of group commit to avoid some disk writes&lt;/li>
+&lt;li>design based on simple performance model that captures the timing characteristics of disks&lt;/li>
+&lt;li>techniques to increase the robustness of system&lt;/li>
+&lt;/ol>
+&lt;p>A file is a sequence of pages, logically numbered beginning with zero.&lt;/p></description></item><item><title>Chain Replication</title><link>https://Phoenix009.github.io/notes/distributed-systems/chain-replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/chain-replication/</guid><description>&lt;p>Chain replication is a new approach to coordinating clusters of fail-stop storage servers. The approach is intended for supporting large-scale storage services that exhibit &lt;mark>high throughput and availability without sacrificing strong consistency&lt;/mark> guarantees&lt;/p>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>This paper is concerned with storage systems that sit somewhere between file systems and database systems.&lt;/p>
+&lt;p>In particular, we are concerned with storage systems, henceforth called &lt;mark>storage services&lt;/mark>, that:&lt;/p>
+&lt;ul>
+&lt;li>store objects&lt;/li>
+&lt;li>support query operations to return a value derived from a single object&lt;/li>
+&lt;li>support update operations to atomically change the state of a single object according to some preprogrammed, possibly non-deterministic, computation involving the prior state of that object.&lt;/li>
+&lt;/ul>
+&lt;p>Strong consistency asserts:&lt;/p></description></item><item><title>Chord</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/chord/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/chord/</guid><description>&lt;h2 id="base-chord-protocol">Base Chord Protocol:&lt;/h2>
+&lt;p>Specifies:&lt;/p>
+&lt;ul>
+&lt;li>How to find the location of keys&lt;/li>
+&lt;li>How new nodes join the system&lt;/li>
+&lt;li>How to recover from the failure of nodes&lt;/li>
+&lt;/ul>
+&lt;h3 id="overview">Overview:&lt;/h3>
+&lt;p>Chord provides fast distributed computation of a hash function mapping keys to the nodes that are responsible for them.&lt;/p>
+&lt;p>Uses consistent hashing:&lt;/p>
+&lt;ul>
+&lt;li>Balances load - all. nodes receive roughly the same number of keys&lt;/li>
+&lt;li>When a Nth node joins or leaves the network only a &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>O&lt;/mi>&lt;mo stretchy="false">(&lt;/mo>&lt;mn>1&lt;/mn>&lt;mi mathvariant="normal">/&lt;/mi>&lt;mi>N&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">O(1/N)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> keys are moved&lt;/li>
+&lt;/ul>
+&lt;p>A Chord node needs only a small amount of routing information about other nodes. Because this information is distributed a node resolve the has function by communicating with a few other nodes.&lt;/p></description></item><item><title>Cox Tra</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/cox-tra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/cox-tra/</guid><description>&lt;p>Read File synchronization with Vector Time Pairs&lt;/p></description></item><item><title>Crash Recovery</title><link>https://Phoenix009.github.io/notes/distributed-systems/crash-recovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/crash-recovery/</guid><description>&lt;p>COW - Requires atomic write to change the pointers for disk blocks
+persist logs on disk on commit and not the actual changes. These actual changes can be done as a group&lt;/p>
+&lt;p>&amp;ndash; How do we deal with multiple writes to the disk for the same objects?
+What if failure before log flush?
+What is the computer architecture for Cedar FS?
+Group Commit is dependent on the underlying computer architecture&lt;/p></description></item><item><title>File Synchronization with Vector Time Pairs</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/file-synchronization-with-vector-time-pairs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/file-synchronization-with-vector-time-pairs/</guid><description>&lt;p>A vector time pair consists of two vector times: one tracking file modification history and one trancking file synchronization history.&lt;/p>
+&lt;h3 id="problem-statement-sychronization">Problem Statement: Sychronization:&lt;/h3>
+&lt;h4 id="synchronizing-files">Synchronizing Files:&lt;/h4>
+&lt;h5 id="no-lost-updates">No Lost Updates:&lt;/h5>
+&lt;p>If two replicas have different copies of a file it is safe to replace X with Y only if X&amp;rsquo;s history is a prefix of Y. In this case we will say that Y is derived from X.&lt;/p>
+&lt;p>If neither histroy is a prefix of the other, then replacing either copy with the other will lose updates. In such a situation, the synchronization reports a conflict.&lt;/p></description></item><item><title>Frangipani</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/frangipani/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/frangipani/</guid><description>&lt;h4 id="lock-service">&lt;em>Lock Service&lt;/em>:&lt;/h4>
+&lt;p>Multiple reader single writer locks&lt;/p>
+&lt;p>Final lock service implementation is fully distributed for fault tolerance and scalable performance.&lt;/p></description></item><item><title>Implementing RPC</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/implementing-rpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/implementing-rpc/</guid><description>&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>Remote Procedure Calls is based on the observation that procedure calls are a well-known and well-understood mechanism for transfer of control within a program running on a single computer.&lt;/p>
+&lt;p>It is proposed that this same mechanism be extended to provide for transfer of control and data across a communication network.&lt;/p>
+&lt;p>There are many attractive aspects to this idea:
+1. Clean and Simple semantics
+2. Efficient
+3. Generality&lt;/p>
+&lt;p>We understood the choices the designer of an RPC facility must make. In practice we found that several areas were inadequately understood, and produced a system whose design has several novel aspects.&lt;/p></description></item><item><title>IVY - Shared Virtual Memory System</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/ivy---shared-virtual-memory-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/ivy---shared-virtual-memory-system/</guid><description>&lt;h3 id="shared-memory-vs-message-passing">Shared Memory vs. Message Passing:&lt;/h3>
+&lt;p>There are two main models for message passing: the message passing interface (MPI) and the remote procedure call (RPC) model.&lt;/p>
+&lt;p>In MPI, processes communicate directly with one another. Parallel programs need to use primitives such as &lt;code>send&lt;/code> and &lt;code>receive&lt;/code> explicitly through channels, or ports. Although programmers can use these primitives to synchronise programs, they need to be conscious of data movement between processes at all times.&lt;/p></description></item><item><title>Memory Coherence in Shared Virtual Memory Systems</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/memory-coherence-in-shared-virtual-memory-systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/memory-coherence-in-shared-virtual-memory-systems/</guid><description>&lt;h2 id="design-choices-for-memory-coherence">Design Choices for Memory Coherence:&lt;/h2>
+&lt;p>Our design goals require that the shared virtual memory are coherent. Coherence can be maintained if a shared virtual memory satisfies the following single constraint:&lt;/p>
+&lt;p>&lt;strong>A processor is allowed to update a piece of data only while no other processor is updating or reading it&lt;/strong>&lt;/p>
+&lt;p>There are two design choices that greatly influence the implementation of a shared virtual memory, granularity and strategy for maintaining coherence.&lt;/p></description></item><item><title>Naiad</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/naiad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/naiad/</guid><description>&lt;ul>
+&lt;li>It offers the high throughput of batch processors, the low latency of stream processors, and the ability to perform iterative and incremental computations.&lt;/li>
+&lt;li>A new computational model, &lt;mark>timely dataflow&lt;/mark>, under- lies Naiad and captures opportunities for parallelism across a wide class of algorithms&lt;/li>
+&lt;/ul>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;ul>
+&lt;li>Stream processors can produce low latency results for non-iterative algorithms&lt;/li>
+&lt;li>Batch systems can iterate synchronously at the expense of latency&lt;/li>
+&lt;li>Trigger based approaches support iteration with only weak consistency guarantees.&lt;/li>
+&lt;/ul>
+&lt;p>Our goal is to develop a general-purpose system that fulfills all of these requirements and supports a wide variety of high-level programming models, while achieving the same performance as a specialised system&lt;/p></description></item><item><title>Programming with Threads</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/programming-with-threads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/programming-with-threads/</guid><description>&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>A &amp;ldquo;thread&amp;rdquo; is a straightforward concept: a single sequential flow of control. Having multiple threads in a program means that at any instant the program has multiple points of execution.&lt;/p>
+&lt;p>The programmer can mostly view the threads as executing simultaneously, as if the computer were endowed with as many processors as there are threads. The programmer must be aware that the computer might not in fact execute all his threads simultaneously.&lt;/p></description></item><item><title>R_star_Distributed_DB</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/r_star_distributed_db/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/r_star_distributed_db/</guid><description>&lt;ul>
+&lt;li>Paper deals with the transaction management aspect of the R* distributed database system.&lt;/li>
+&lt;li>Concentrates primarily on description of commit protocols&lt;/li>
+&lt;li>PA - Presumed Abort and PC - Presumed commit are extensions of 2PC&lt;/li>
+&lt;li>Paper also discusses approach towards distributed deadlock detection and resolution&lt;/li>
+&lt;/ul>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>In a distributed database system, the actions of a transaction (an atomic unit of consistency and recovery) may occur at more than one site.&lt;/p>
+&lt;p>A distributed transaction commit protocol is required in order to ensure either that all the effects of the transaction persist or that none of the effects persist, despite intermittent site or communication link failures.&lt;/p></description></item><item><title>Replication</title><link>https://Phoenix009.github.io/notes/distributed-systems/replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/replication/</guid><description>&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;ul>
+&lt;li>Replicate state so that the service is always available&lt;/li>
+&lt;li>If one replica fails use another one&lt;/li>
+&lt;/ul>
+&lt;h3 id="cost-of-replication">Cost of Replication:&lt;/h3>
+&lt;ul>
+&lt;li>Typically, We keep 1 primary copy and N backup copies&lt;/li>
+&lt;li>All copies must be kept synchronised: Each backup has the same state as the primary&lt;/li>
+&lt;li>All copies should be physically separated&lt;/li>
+&lt;li>Expensive: N times the cost&lt;/li>
+&lt;/ul>
+&lt;h3 id="failures-handled-by-replication">Failures handled by replication:&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Fail-Stop Failures:&lt;/p>
+&lt;ul>
+&lt;li>Component suddenly stops functioning and does not recover&lt;/li>
+&lt;li>System can detect the failure reliably&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Complete loss of a replica:&lt;/p></description></item><item><title>Spark</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/spark/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/spark/</guid><description>&lt;ul>
+&lt;li>Resilient Distributed Datasets (RDDs), a distributed memory abstraction that lets programmers perform in-memory computations on large clusters in a fault-tolerant manner.&lt;/li>
+&lt;/ul>
+&lt;h2 id="introduction">Introduction:&lt;/h2>
+&lt;p>Cluster computing frameworks like MapReduce and Dryad have been widely adopted for large-scale data analytics.&lt;/p>
+&lt;p>Unfortunately, in most current frameworks, the only way to reuse data between computations (e.g., between two MapReduce jobs) is to write it to an external stable storage system, e.g., a distributed file system&lt;/p></description></item><item><title>TreadMarks</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/treadmarks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/treadmarks/</guid><description>&lt;h3 id="introduction">Introduction:&lt;/h3>
+&lt;p>TreadMarks is a distributed shared memory system for standard unix systems. TreadMarks goes to great lengths to reduce the amount of communication performed to maintain memory consistency.&lt;/p>
+&lt;p>It &lt;mark>uses lazy implementation of release consistency&lt;/mark>, and it allows &lt;mark>multiple concurrent writers to modify a page&lt;/mark>, reducing the impact of false sharing.&lt;/p>
+&lt;p>Earlier implementation of DSM had the following problems:&lt;/p>
+&lt;ul>
+&lt;li>were not available on general operating systems&lt;/li>
+&lt;li>required kernel modifications&lt;/li>
+&lt;li>had performance problems&lt;/li>
+&lt;li>false sharing&lt;/li>
+&lt;/ul>
+&lt;p>TreadMarks implementation relies on user-level memory management techniques. Uses lazy release consistency and multiple-writer protocols to reduce the impact of false sharing. Focuses on minimizing the amount of communication to keep memory consistent.&lt;/p></description></item><item><title>VM - Fault Tolerance</title><link>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/vm---fault-tolerance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/papers-summary/vm---fault-tolerance/</guid><description>&lt;p>Provide fault tolerant virtual machines, based on the approach of replicating the execution of a primary virtual machine via a backup virtual machine on another server.&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Primary and backup is a common approach to implement fault-tolerant servers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>One way of replicating the state on the backup server is to ship changes to entire state of the primary, including CPU, memory and I/O devices to the backup nearly continuously.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Bandwidth requirement can be==== very large.&lt;/p></description></item><item><title>Write Ahead Logs</title><link>https://Phoenix009.github.io/notes/distributed-systems/write-ahead-logs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/distributed-systems/write-ahead-logs/</guid><description>&lt;p>&lt;em>How to maintain &lt;mark>CONSISTENCY&lt;/mark> of persistent data in the face of failures.&lt;/em>&lt;/p>
+&lt;h2 id="key-idea-for-storage-crash-tolerance">Key Idea for Storage Crash Tolerance:&lt;/h2>
+&lt;p>We order our transactions in such a way that we have a atomic commit for the whole transaction.&lt;/p>
+&lt;ul>
+&lt;li>crash before atomic commit: ROLLBACK the transaction.&lt;/li>
+&lt;li>crash after atomic commit: recover the transaction.&lt;/li>
+&lt;/ul>
+&lt;h2 id="write-ahead-redo-logs">Write Ahead REDO logs&lt;/h2>
+&lt;h3 id="design-1-one-transaction-at-a-time">Design 1: One transaction at a time:&lt;/h3>
+&lt;h4 id="execution">Execution:&lt;/h4>
+&lt;ul>
+&lt;li>transaction writes changes to cache.&lt;/li>
+&lt;/ul>
+&lt;h4 id="commit">Commit:&lt;/h4>
+&lt;ul>
+&lt;li>Write REDO log records to the disk&lt;/li>
+&lt;li>Write the end-log-record (&lt;mark>COMMIT POINT&lt;/mark>)
+Contains:
+&lt;ul>
+&lt;li>Transaction ID&lt;/li>
+&lt;li># log blocks&lt;/li>
+&lt;li>Checksum&lt;/li>
+&lt;li>active = 1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Write transaction blocks to the disk&lt;/li>
+&lt;li>REWRITE end-log-record: set active = 0&lt;/li>
+&lt;/ul>
+&lt;h4 id="recovery">Recovery:&lt;/h4>
+&lt;p>REDO all the log records that have &lt;mark>active = 1&lt;/mark>.
+AFTER flushing the transaction blocks to the disk set active = 0&lt;/p></description></item></channel></rss>

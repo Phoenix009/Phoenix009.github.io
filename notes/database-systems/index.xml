@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Database Systems on Jaideep M. More</title><link>https://Phoenix009.github.io/notes/database-systems/</link><description>Recent content in Database Systems on Jaideep M. More</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://Phoenix009.github.io/notes/database-systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Storage</title><link>https://Phoenix009.github.io/notes/database-systems/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/storage/</guid><description>&lt;p>&lt;strong>Underlying Question:&lt;/strong>&lt;/p>
+&lt;p>How to move &amp;lsquo;big&amp;rsquo; data through a computer system?&lt;/p>
+&lt;p>&lt;strong>Learning Objective:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Storage Heirarchy&lt;/li>
+&lt;li>Replication&lt;/li>
+&lt;li>Caching&lt;/li>
+&lt;li>Buffering&lt;/li>
+&lt;li>Read and Write Strategies&lt;/li>
+&lt;/ol>
+&lt;h1 id="storage-heirarchy">Storage Heirarchy:&lt;/h1>
+&lt;h2 id="properties-of-perfect-computer-memory">Properties of perfect computer Memory:&lt;/h2>
+&lt;ol>
+&lt;li>Unlimited Capacity&lt;/li>
+&lt;li>Instant random Access&lt;/li>
+&lt;li>Unlimited Bandwidth for sequential access - Meaning i can read and write a huge amount of data per second&lt;/li>
+&lt;li>No transfer const to the CPU&lt;/li>
+&lt;li>For Free ??&lt;/li>
+&lt;li>Persistent, always, forever&lt;/li>
+&lt;/ol>
+&lt;h2 id="storage-heirarchy-the-principle-idea">Storage Heirarchy: The principle idea:&lt;/h2>
+&lt;pre tabindex="0">&lt;code> | Registers |
+ Capacity | L1 Cache |
+ Access Time| L2 Cache | Cost/Byte
+ | L3 Cache | Bandwidth
+ | Main Memory |
+ V Flash/Hard Disk V
+&lt;/code>&lt;/pre>&lt;p>The visualization is correct but deceiving. The rate of increase between certain layers is very very large which is not depicted in the heirarchy and can be overlooked&lt;/p></description></item><item><title>Data Layout</title><link>https://Phoenix009.github.io/notes/database-systems/data-layout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/data-layout/</guid><description>&lt;p>&lt;strong>Underlying Question:&lt;/strong>&lt;/p>
+&lt;p>How to speed up the system by improving its data throughput&lt;/p>
+&lt;p>&lt;strong>Learning Objectives:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Data Layouts&lt;/li>
+&lt;li>Row, Column, Hybrid&lt;/li>
+&lt;li>Compression&lt;/li>
+&lt;li>Bitlists, Approximations etc&lt;/li>
+&lt;/ol>
+&lt;h2 id="what-are-the-principal-mapping-steps-to-map-a-relation-to-a-device">What are the principal mapping steps to map a relation to a device?&lt;/h2>
+&lt;p>&lt;strong>1a. linearize:&lt;/strong>&lt;/p>
+&lt;p>To dimensional relations are mapped to a one dimensional sequence of values&lt;/p>
+&lt;p>&lt;strong>1b. serialize:&lt;/strong>&lt;/p>
+&lt;p>a one dimensional sequence of values is ampped to bytes on virtual pages&lt;/p>
+&lt;p>&lt;strong>2. devirtualize:&lt;/strong>&lt;/p>
+&lt;p>virtual pages are mapped to physical pages&lt;/p></description></item><item><title>Storage and Indexing</title><link>https://Phoenix009.github.io/notes/database-systems/storage-and-indexing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/storage-and-indexing/</guid><description>&lt;h2 id="cost-model">Cost Model:&lt;/h2>
+&lt;p>We will use the following notations and assumptions in our analysis:&lt;/p>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>B&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">B&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is the number of data pages&lt;/p>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>R&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">R&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is the nnumber of records per page&lt;/p>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>D&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">D&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is the time required to read/write one page&lt;/p>
+&lt;p>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>C&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">C&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is the time to process a record&lt;/p>
+&lt;p>The cost of I/O to dominates all other cost of a database opearations. Thus we use the number of page I/O’s as out cost metric.&lt;/p></description></item><item><title>Query Processing and Optimization</title><link>https://Phoenix009.github.io/notes/database-systems/query-processing-and-optimization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/query-processing-and-optimization/</guid><description>&lt;p>&lt;strong>Underlying Question:&lt;/strong>&lt;/p>
+&lt;p>How to compute complex queries at scale?&lt;/p>
+&lt;p>&lt;strong>Learning Objective:&lt;/strong>&lt;/p>
+&lt;p>query optimization, query processing, operator models, pull, push, vectorization, rule vs cost; intra- vs inter-query parallelization , accross threads vs machines; mu&lt;em>t&lt;/em>able.&lt;/p>
+&lt;h2 id="computing-the-results-of-a-query">Computing the results of a query:&lt;/h2>
+&lt;p>We have two options&lt;/p>
+&lt;ol>
+&lt;li>Brute Force (Scan): we inspect each and every tuple and check whether the query predicate holds for that tuple and add it to the result set.&lt;/li>
+&lt;li>Index (Index Scan): We organixe the contents of the realation such that we do not have to inspect each and every tuple to determine whether the tuple belongs to the result set.&lt;/li>
+&lt;/ol>
+&lt;h3 id="partitioning-function">Partitioning Function:&lt;/h3>
+&lt;p>Given a domain D, any function p: [R] → D is called a partitioning function.&lt;/p></description></item><item><title>Crash Recovery</title><link>https://Phoenix009.github.io/notes/database-systems/crash-recovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/crash-recovery/</guid><description>&lt;p>&lt;strong>Underlying Question:&lt;/strong>&lt;/p>
+&lt;p>How do we make a system robust against software and hardware crashes&lt;/p>
+&lt;p>&lt;strong>Learning Objective:&lt;/strong>&lt;/p>
+&lt;p>crash recover: failover, hot standby, loging, redo, undo, ARIES, elasticity&lt;/p>
+&lt;h1 id="introduction">Introduction:&lt;/h1>
+&lt;h2 id="what-is-recovery">What is recovery?&lt;/h2>
+&lt;p>By recovery we meant hat we can get back to a consistent state of the database according to the ACID properties.&lt;/p>
+&lt;h2 id="what-is-the-impact-of-failures-on-acid">What is the impact of failures on ACID?&lt;/h2>
+&lt;p>Error scenarios affect the ataomicity i.e. only a part of the transaction is executed, and durability, i.e. only some of the actions of a transaction were made durable. These problems then affect the consistency of the database&lt;/p></description></item><item><title>Cheatsheet</title><link>https://Phoenix009.github.io/notes/database-systems/cheatsheet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/database-systems/cheatsheet/</guid><description>&lt;p>&lt;strong>Read Uncommited:&lt;/strong>&lt;/p>
+&lt;p>READ uncommited&lt;/p>
+&lt;p>DONT WRITE uncommiteed&lt;/p>
+&lt;p>&lt;strong>Read Commited:&lt;/strong>&lt;/p>
+&lt;p>DONT READ commited&lt;/p>
+&lt;p>&lt;strong>Repeatable Read:&lt;/strong>&lt;/p>
+&lt;p>DONT ALLOW WRITE ON READ rows&lt;/p>
+&lt;p>&lt;strong>Serializable:&lt;/strong>&lt;/p>
+&lt;p>No Concurrent executions on a common table&lt;/p>
+&lt;p>&lt;strong>RAID5:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>deviceID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">LBA&lt;/span> &lt;span style="color:#66d9ef">MOD&lt;/span> (k&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>internalBlockID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">LBA&lt;/span> &lt;span style="color:#66d9ef">DIV&lt;/span> (k&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deviceID_parity &lt;span style="color:#f92672">=&lt;/span> (internalBlockID&lt;span style="color:#f92672">+&lt;/span>k&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#66d9ef">MOD&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> deviceID &lt;span style="color:#f92672">&amp;gt;=&lt;/span> deviceID_parity:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">deviceID&lt;/span> &lt;span style="color:#f92672">=&lt;/span> deviceID &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ret &lt;span style="color:#f92672">=&lt;/span> [ (deviceID, internalBlockID, &lt;span style="color:#66d9ef">false&lt;/span>) ];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ret.extend([ ( deviceID_parity, internalBlockID, &lt;span style="color:#66d9ef">true&lt;/span>) ]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">return&lt;/span> ret;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>What are characteristics of workloads where the following layouts typically perform well: row layout, colum layout, and PAX?&lt;/strong>&lt;/p></description></item></channel></rss>

@@ -1,0 +1,27 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>QoS - Quality of Service | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>QoS - Quality of Service</h1><div class=content><h2 id=network-support-for-multimedia>Network support for Multimedia</h2><p><img src=/notes/computer-networks/images/qos.svg alt=qos loading=lazy></p><h3 id=dimensioning-best-effort-networks>Dimensioning Best Effort Networks:</h3><p><strong>Approach</strong>: Deploy enough link capacity so that congestion does not occur, and multimedia traffic flows without delay or loss</p><ul><li>low complexity of network mechanisms</li><li>Challenge: <em>How much bandwidth is enough?</em></li></ul><h4 id=providing-multiple-classes-of-service>Providing multiple classes of service:</h4><p>The earlier approach is a &ldquo;one-size-fits-all&rdquo; approach.</p><p>Alternative: provide multiple classes of services</p><ul><li><p>Partition traffic into classes</p></li><li><p>Network treats different classes of traffic differently</p></li><li><p><mark>Packet marking needed</mark> for router to distinguish between different classes, and new router policy to treat packets accordingly.</p></li><li><p><mark>Traffic Policing</mark>: Force a source to adhere to bandwidth allocations.</p></li></ul><h4 id=policing-mechanism>Policing Mechanism:</h4><p><strong>Goal</strong>: Limit traffic to not exceed declared parameters</p><p>Three commonly used criteria:</p><ol><li><strong>Average rate</strong>: How many packets can be sent per unit time</li><li><strong>Peak rate:</strong> What is the max rate at which the flow can send packets</li><li><strong>Burst Size</strong>: Max. number of packets sent consecutively</li></ol><h5 id=token-bucket>Token Bucket:</h5><p>Limit input to specified <mark>burst size</mark> and <mark>average rate</mark>.</p><p><em>How?</em></p><ul><li>Bucket can hold <code>b</code> tokens</li><li>Tokens are generated at rate <code>r</code> tokens/sec</li><li>Over interval of length <code>t</code>: <span class=katex><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>#packets admitted</mtext><mo>≤</mo><mi>r</mi><mi>t</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\text{\#packets admitted} \le rt + b </annotation></semantics></math></span></li></ul><h3 id=differentiate-services>Differentiate Services:</h3><ul><li>Want qualitative service classes</li></ul><p>Scalability: simple functions in network core; relatively complex functions at edge</p></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/iot/>← IOT</a>
+<a class=next href=/notes/computer-networks/real-time-protocol/>Real Time Protocol →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

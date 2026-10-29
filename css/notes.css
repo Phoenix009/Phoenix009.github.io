@@ -1,0 +1,67 @@
+.breadcrumb {
+  margin: 1.3rem 0 0 0;
+  color: #666;
+}
+.note-subjects {
+  list-style: none;
+}
+.note-count {
+  color: #666;
+  margin-left: 0.5em;
+}
+.note .content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
+.note .content table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+.note .content th, .note .content td {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+}
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+mark {
+  background-color: #fff3a3;
+}
+.callout {
+  border-left: 4px solid #5b8def;
+  background: #f4f7fd;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+.callout-title {
+  font-weight: bold;
+  margin: 0;
+}
+.callout-warning, .callout-danger {
+  border-left-color: #e0564b;
+  background: #fdf3f2;
+}
+.missing-note {
+  color: #888;
+  border-bottom: 1px dashed #aaa;
+}
+.note-embed {
+  display: inline-block;
+  margin: 0.5em 0;
+}
+.note-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+}
+.note-nav .next {
+  margin-left: auto;
+  text-align: right;
+}

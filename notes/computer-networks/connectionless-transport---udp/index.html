@@ -1,0 +1,27 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Connectionless Transport - UDP | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>Connectionless Transport - UDP</h1><div class=content><p>UDP does just about as little as a transport protocol can do. Aside from the multiplexing/demultiplexing function and some light error checking, it adds nothing to IP.</p><p>UDP takes messages from the application process, attaches source and destination port number fields for the multiplexing/demultiplexing service, adds two other small fields and passes the resulting segment to the network layer.</p><p>With UDP there is no handshaking between sending and receiving transport layer entities before sending a segment. For this reason, UDP is said to be connectionless.</p><p>Many applications are better suited for using UDP for the following reasons:</p><ol><li><mark>Finer application level control</mark> over what data is sent and when</li><li><mark>No connection establishment</mark>: UDP does not introduce any delay to establish a connection. Primary reason why DNS uses UDP over TCP.</li><li><mark>No connection state</mark>: UDP does not maintain connection state. For this reason, a server can support many more active clients when the application runs over UDP rather than TCP.</li><li><mark>Small Packet Overhead</mark>: UDP segments have only 8 Byte overhead.</li></ol><p>It is possible for an application to have reliable data transfer when using UDP. This can be done if reliability is built into the application itself. Such an application can communicate reliably without being subjected to the transmission-rate constraints of TCP.</p><h3 id=segment-structure>Segment Structure:</h3><p><img src=/notes/computer-networks/images/udp_segment.png alt=udp_segment loading=lazy></p><p>The application data occupies the data field of the UDP segment.</p><p>The UDP header has only four fields</p><ol><li>Port numbers allow multiplexing and demultiplexing.</li><li>length field specifies the number of bytes in the UDP segment (header + data)</li><li>Checksum is used to check whether errors have been introduced in the segment.</li></ol><h3 id=udp-checksum>UDP Checksum:</h3><p>UDP checksum provides error detection.</p><p>UDP at the sender side performs the 1’s complement of the sum of all 16-bit words in the segment, with any overflow encountered during the sum being discarded.</p><p>At the receiver, all 16-bit words are added, including the checksum. If no errors are introduced into the packet then result is all 1’s. If one of the bits is a 0, then we know that errors have been introduced.</p><p><mark>Although UDP provides error checking, it does not do anything to recover from an error.</mark></p></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/transport-layer/>← Transport Layer</a>
+<a class=next href=/notes/computer-networks/principles-of-reliable-data-transfer/>Principles of Reliable Data Transfer →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Real Time Protocol | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>Real Time Protocol</h1><div class=content><p>RTP runs in end-systems.</p><h3 id=rtp-qos>RTP QoS:</h3><ul><li>Protocol does not provide any QoS guarantees</li><li>RTP encapsulation is only seen at the end systems. Routers provide best-effort-service making no special effort</li></ul><h3 id=rtp-on-top-of-udp>RTP on top of UDP</h3><ul><li>RTP packets are encapsulated in UDP segments</li><li>RTP libraries provide transport-layer interface that extends UDP<ul><li>Port numbers, IP addresses</li><li>Payload type identification</li><li>Packet sequence numbering</li><li>time stamping</li></ul></li><li>Application collects encoded data in chunks, ex: every 20ms 160B in a chunk</li><li>Audio chunk + RTP Header form RTP packet, encapsulated in UDP segment</li><li>RTP header indicates type of audio encoding in each packet</li><li>Header also contains sequence number and time stamps</li></ul><h3 id=rtp-header>RTP Header:</h3><p><img src=/notes/computer-networks/images/RTP-header.svg alt=RTP-header loading=lazy></p><ol><li>Payload Type (7b):<ul><li>Indicates type of encoding currently being used. If sender changes encoding during call, sender informs receiver via payload-type field</li></ul></li><li>Sequence # (16b):<ul><li>Increment by one for each RTP packet sent</li><li>Detect packet loss, restore packet sequence</li></ul></li><li>Timestemp (32b):<ul><li>Sampling instant of the first byte in the packet</li></ul></li></ol><h3 id=rtcp---real-time-control-protocol>RTCP - Real time control protocol:</h3><ul><li>Works in conjunctions with RTP</li><li>Each participant in RTP session periodically sends RTCP control packets to all other participants</li><li>Each RTCP packet contains sender and/or receiver reports</li><li>Feedback used to control performance</li></ul><p>Each RTP session:
+- Typically a single multicast address
+- All RTP/RTCP packet belonging to the session use multicast address</p><ul><li>RTP and RTCP packets are distinguished via distinct port numbers</li></ul></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/qos---quality-of-service/>← QoS - Quality of Service</a>
+<a class=next href=/notes/computer-networks/session-initiation-protocol/>Session Initiation Protocol →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

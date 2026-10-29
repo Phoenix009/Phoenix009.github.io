@@ -1,0 +1,33 @@
+/* Courier Prime (SIL OFL, see /fonts/courier-prime/OFL.txt), overriding the theme's Iosevka. */
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/courier-prime/CourierPrime-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/courier-prime/CourierPrime-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/courier-prime/CourierPrime-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/courier-prime/CourierPrime-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+#root {
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+}

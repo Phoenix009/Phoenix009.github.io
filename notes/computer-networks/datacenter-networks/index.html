@@ -1,0 +1,34 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Datacenter Networks | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>Datacenter Networks</h1><div class=content><p>The hosts in datacenters, called <mark>blades</mark> and resembling pizza boxes, are generally commodity hosts that include CPU, memory, and disk storage.</p><p>The hosts are stacked in <mark>racks</mark>, with each rack typically having 20 to 40 blades. At the top of each rack there is a switch, aptly named the <mark>Top of Rack (TOR) switch</mark>, that interconnects the hosts in the rack with each other and with other switches in the datacenter.</p><p>To handle flows between external clients and internal hosts, the datacenter network includes one or more <mark>border routers</mark>, connecting the datacenter network to the public Internet.</p><h2 id=hierarchical-architecture---fat-tree>Hierarchical Architecture - Fat Tree:</h2><p>The network is divided into three main layers: the access layer, the aggregation layer, and the core layer.</p><p><img src=/notes/computer-networks/images/Fat_Tree.png alt=Fat_Tree loading=lazy></p><ol><li><p><strong>Access Layer</strong>: At the bottom of the fat tree, the access layer <mark>consists of switches that connect servers, storage systems, and other network devices</mark>. Each device is connected to a switch in this layer. The access layer switches are typically low-cost and have a relatively low number of ports.</p></li><li><p><strong>Aggregation Layer</strong>: The aggregation layer sits above the access layer and acts as an intermediary between the access and core layers. It consists of switches that <mark>aggregate the traffic from multiple access layer switches</mark>. These switches have a higher port density than the access layer switches. The aggregation layer helps distribute the traffic across the core layer and provides scalability and fault tolerance.</p></li><li><p><strong>Core Layer</strong>: The core layer forms the backbone of the fat tree topology. It consists of <mark>high-performance switches that connect the aggregation switches together</mark>. These switches provide high-bandwidth connectivity and serve as the main path for data transfer within the data center. The core layer switches are typically designed to handle heavy network traffic and minimise latency.</p></li></ol><p><strong>Properties of Fat Tree Layout</strong>:</p><ul><li>Multiple routes to the core. Once a core is chosen, path to the host is fixed.</li><li>Multiple paths for data traffic, which helps in load balancing and fault tolerance</li><li>Load balancing traffic from hosts. ECMP - Equal cost multi-path routing</li></ul><p><strong>Bisection Bandwidth</strong>:
+Sum of the bandwidths of the minimal number of links cut to create the bisection.</p><p><strong>Full Bisection Bandwidth</strong>:
+If aggregate bandwidth is equal to the bisection bandwidth</p><p><strong>Oversubscription</strong>:
+Aggregate bandwidth from a subnet is greater than the available bandwidth allocated to it.
+Ex:
+When 10 hosts are connected to a ToR using 1Gbps link each thus aggregate bandwidth is 10Gbps. However, the link used to connect the ToR to an aggregate switch is just 5Gbps.</p><p><strong>Oversubscription Ratio</strong>:
+Ratio of worst case aggregation bandwidth among end hosts to the total bisection bandwidth</p><p><strong>ECMP</strong>
+ECMP requires having multiple paths available between a source and a destination. These paths typically have the same routing cost, achieved either through equal-cost links or using techniques like link cost adjustment.</p><p>When a packet arrives at a router or switch, ECMP uses a hashing mechanism to determine which path the packet should take. The hashing algorithm often uses information from the packet header, such as source and destination IP addresses, to create a unique identifier. This identifier is then mapped to one of the available paths.</p></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/multimedia-networking/>← Multimedia Networking</a>
+<a class=next href=/notes/computer-networks/software-defined-networking/>Software Defined Networking →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

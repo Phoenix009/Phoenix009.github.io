@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Jaideep M. More</title><link>https://Phoenix009.github.io/notes/security/</link><description>Recent content in Security on Jaideep M. More</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://Phoenix009.github.io/notes/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction</title><link>https://Phoenix009.github.io/notes/security/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/introduction/</guid><description>&lt;p>Reference Book: &lt;a href="https://elibrary.pearson.de/book/view/99.150005/9781292220635" rel="noopener">https://elibrary.pearson.de/book/view/99.150005/9781292220635&lt;/a>?&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Sr.No&lt;/th>
+ &lt;th>Links&lt;/th>
+ &lt;th>Title&lt;/th>
+ &lt;th>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;mark>1&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/Q_vUWXipEnY" rel="noopener">https://youtu.be/Q_vUWXipEnY&lt;/a>&lt;/td>
+ &lt;td>Introduction and Organizational Matters&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>2&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/n8TXCbVCWwI" rel="noopener">https://youtu.be/n8TXCbVCWwI&lt;/a>&lt;/td>
+ &lt;td>Basic Notions&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>3&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/7__IdymmH0E" rel="noopener">https://youtu.be/7__IdymmH0E&lt;/a>&lt;/td>
+ &lt;td>Symmetric cryptography&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>4&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/VU6s7udey60" rel="noopener">https://youtu.be/VU6s7udey60&lt;/a>&lt;/td>
+ &lt;td>Assymmetric Cryptography&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>5&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/foQxLmVl_eU" rel="noopener">https://youtu.be/foQxLmVl_eU&lt;/a>&lt;/td>
+ &lt;td>Crypto Protocols&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>6.1&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/kEJhZj9A75U" rel="noopener">https://youtu.be/kEJhZj9A75U&lt;/a>&lt;/td>
+ &lt;td>TLS PKI and Certificates 1&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>6.2&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/mFy0E2FzVrk" rel="noopener">https://youtu.be/mFy0E2FzVrk&lt;/a>&lt;/td>
+ &lt;td>TLS PKI and Certificates 2&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/MiTK7TTasAPBk8D" rel="noopener">https://dl.cispa.de/s/MiTK7TTasAPBk8D&lt;/a>&lt;/td>
+ &lt;td>Distributed Systems&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/BYPw3WHePrHan3n" rel="noopener">https://dl.cispa.de/s/BYPw3WHePrHan3n&lt;/a>&lt;/td>
+ &lt;td>Anonymity and Privacy&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/bJNEbFATP4Sexxc" rel="noopener">https://dl.cispa.de/s/bJNEbFATP4Sexxc&lt;/a>&lt;/td>
+ &lt;td>ML Security&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>10&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/j-ea3d0drU4" rel="noopener">https://youtu.be/j-ea3d0drU4&lt;/a>&lt;/td>
+ &lt;td>Network Security 1&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>11&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/ijm-h71gjco" rel="noopener">https://youtu.be/ijm-h71gjco&lt;/a>&lt;/td>
+ &lt;td>Network Security 2&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12.1&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/cgP2A-sTRPs" rel="noopener">https://youtu.be/cgP2A-sTRPs&lt;/a>&lt;/td>
+ &lt;td>Access Control and Security Policies 1&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12.2&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/Fjj9FS--Zg0" rel="noopener">https://youtu.be/Fjj9FS--Zg0&lt;/a>&lt;/td>
+ &lt;td>Access Control and Security Policies 2&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/FtmlbpZyYms" rel="noopener">https://youtu.be/FtmlbpZyYms&lt;/a>&lt;/td>
+ &lt;td>Authentication&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/wj3BV5JQhS8" rel="noopener">https://youtu.be/wj3BV5JQhS8&lt;/a>&lt;/td>
+ &lt;td>Usable Security&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>15&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/j8BJK4BWLQEqK3C" rel="noopener">https://dl.cispa.de/s/j8BJK4BWLQEqK3C&lt;/a>&lt;/td>
+ &lt;td>Software Security 1&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>16.1&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://www.youtube.com/watch?v=bWH-nL7v5F4" rel="noopener">https://www.youtube.com/watch?v=bWH-nL7v5F4&lt;/a>&lt;/td>
+ &lt;td>Debugging GDB tutorial&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>16.2&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://www.youtube.com/watch?v=bWH-nL7v5F4" rel="noopener">https://www.youtube.com/watch?v=bWH-nL7v5F4&lt;/a>&lt;/td>
+ &lt;td>Debugging GDB tutorial&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>17&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://www.youtube.com/watch?v=IfvsSDB8dlc" rel="noopener">https://www.youtube.com/watch?v=IfvsSDB8dlc&lt;/a>&lt;/td>
+ &lt;td>Software Security 4&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>18&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://www.youtube.com/watch?v=mM6js-oWUj8" rel="noopener">https://www.youtube.com/watch?v=mM6js-oWUj8&lt;/a>&lt;/td>
+ &lt;td>Software Security 5&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>19&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://www.youtube.com/watch?v=n1blUCjGpUU" rel="noopener">https://www.youtube.com/watch?v=n1blUCjGpUU&lt;/a>&lt;/td>
+ &lt;td>Software Security 6&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>20&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/4epfMPfaP2DMGbd" rel="noopener">https://dl.cispa.de/s/4epfMPfaP2DMGbd&lt;/a>&lt;/td>
+ &lt;td>Software Security 7&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>21&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/Ns29LB6kXPb43PW" rel="noopener">https://dl.cispa.de/s/Ns29LB6kXPb43PW&lt;/a>&lt;/td>
+ &lt;td>Reverse Engineering&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>22&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/orxOSXA_MP0" rel="noopener">https://youtu.be/orxOSXA_MP0&lt;/a>&lt;/td>
+ &lt;td>Trusted and Secure Computing&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>23&lt;/td>
+ &lt;td>&lt;a href="https://youtu.be/wEblwp6KjPg" rel="noopener">https://youtu.be/wEblwp6KjPg&lt;/a>&lt;/td>
+ &lt;td>Mobile Security&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>24&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/nXTk6adGzq4PDDK" rel="noopener">https://dl.cispa.de/s/nXTk6adGzq4PDDK&lt;/a>&lt;/td>
+ &lt;td>Web Security 1&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;mark>25&lt;/mark>&lt;/td>
+ &lt;td>&lt;a href="https://dl.cispa.de/s/R7yJaPjEermLDp7" rel="noopener">https://dl.cispa.de/s/R7yJaPjEermLDp7&lt;/a>&lt;/td>
+ &lt;td>Web Security 2&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Basic Notions</title><link>https://Phoenix009.github.io/notes/security/basic-notions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/basic-notions/</guid><description>&lt;h1 id="basic-components">Basic Components:&lt;/h1>
+&lt;h2 id="computer-security">Computer Security:&lt;/h2>
+&lt;p>Measures and controls that ensure the confidentiality, integrity and availability of computer resources including the software, hardware, firmware and information being processed, stored and communicated.&lt;/p>
+&lt;h2 id="1-confidentiality">1. Confidentiality:&lt;/h2>
+&lt;p>Confidentiality is the concealment of information or resources. The need for keeping information secret arises from the use of computers in institutions with sensitive information such as government and industry.&lt;/p>
+&lt;h2 id="2-integrity">2. Integrity:&lt;/h2>
+&lt;p>Integrity refers to the trustworthiness of data or resources, and it is usually phrased in terms of preventing improper or unauthorised change.&lt;/p></description></item><item><title>Number Theory Basics</title><link>https://Phoenix009.github.io/notes/security/number-theory-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/number-theory-basics/</guid><description>&lt;h1 id="primes-and-divisibility">Primes and Divisibility&lt;/h1>
+&lt;ul>
+&lt;li>Set of integers is denoted as &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi mathvariant="double-struck">Z&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">\mathbb{Z}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>for &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>b&lt;/mi>&lt;mo>∈&lt;/mo>&lt;mi mathvariant="double-struck">Z&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a, b \in \mathbb{Z}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>,
+&lt;ul>
+&lt;li>a divides b is denoted as &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo>∣&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a \mid b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>a does no divides b is denoted as &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo>∤&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a \nmid b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>if &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo>∣&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a \mid b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> then
+&lt;ul>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is a divisor of &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>if &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo mathvariant="normal">∉&lt;/mo>&lt;mrow>&lt;mn>1&lt;/mn>&lt;mo separator="true">,&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;/mrow>&lt;annotation encoding="application/x-tex">a \notin {1, b}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> then &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is a non trivial divisor or a factor of &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>a positive integer &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>p&lt;/mi>&lt;mo>&amp;gt;&lt;/mo>&lt;mn>1&lt;/mn>&lt;/mrow>&lt;annotation encoding="application/x-tex">p \gt 1&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is prime if it has not factors.&lt;/li>
+&lt;li>the greatest common divisor of two integers &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> and &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is denoted as &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>g&lt;/mi>&lt;mi>c&lt;/mi>&lt;mi>d&lt;/mi>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>a&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>b&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">gcd(a, b)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> and is the largest &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>c&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">c&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> such that &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>c&lt;/mi>&lt;mo>∣&lt;/mo>&lt;mi>a&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">c \mid a&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> and &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>c&lt;/mi>&lt;mo>∣&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">c \mid b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>if &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>p&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">p&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is prime then &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>g&lt;/mi>&lt;mi>c&lt;/mi>&lt;mi>d&lt;/mi>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>a&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>p&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;mo>=&lt;/mo>&lt;mn>1&lt;/mn>&lt;mtext> or &lt;/mtext>&lt;mi>p&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">gcd(a, p) = 1 \text{ or } p&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/li>
+&lt;li>if &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>g&lt;/mi>&lt;mi>c&lt;/mi>&lt;mi>d&lt;/mi>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>a&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>b&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;mo>=&lt;/mo>&lt;mn>1&lt;/mn>&lt;/mrow>&lt;annotation encoding="application/x-tex">gcd(a, b) = 1&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> then &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>a&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>b&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">a, b&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> are said to be co-prime&lt;/li>
+&lt;/ul>
+&lt;h1 id="modular-arithmetic">Modular Arithmetic&lt;/h1></description></item><item><title>Symmetric Cryptography</title><link>https://Phoenix009.github.io/notes/security/symmetric-cryptography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/symmetric-cryptography/</guid><description>&lt;p>References:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 2.2-2.3&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 3.6.3&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 4.2, 4.4&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 6.1, 6.3-6.4&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 7.2.5, 7.3.2&lt;/li>
+&lt;/ul>
+&lt;p>Modern cryptography involves the study of mathematical techniques for securing digital information, systems, and distributed computations against adversarial attacks.&lt;/p>
+&lt;h1 id="setting-of-private-key-encryption">Setting of Private Key Encryption&lt;/h1>
+&lt;p>Classical cryptography was concerned with designing and using codes that enables two parties to communicate secretly in the presence of an eavesdropper who can monitor all communication between them.&lt;/p>
+&lt;p>Security of all classical encryption schemes relied on a secret key shared by the communicating parties in advance and unknown to the eavesdropper. This scenarios is known as the private-key setting.&lt;/p></description></item><item><title>Integrity</title><link>https://Phoenix009.github.io/notes/security/integrity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/integrity/</guid><description>&lt;h1 id="mac---message-authentication-code">MAC - Message Authentication Code&lt;/h1>
+&lt;p>Encryption in general does not solve the problem of message integrity.&lt;/p>
+&lt;p>The aim of message authentication code is to prevent any adversary from modifying the message sent by one party to another, or from injecting a new message, without the receiver detecting that the message did not originate from the intended party.&lt;/p>
+&lt;p>Formally,
+A message authentication code or &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext>MAC&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\text{MAC}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> consists of three probabilistic polynomial time algorithms &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mtext>(Gen, Mac, Vrfy)&lt;/mtext>&lt;/mrow>&lt;annotation encoding="application/x-tex">\text{(Gen, Mac, Vrfy)}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> such that:&lt;/p></description></item><item><title>Key Distribution</title><link>https://Phoenix009.github.io/notes/security/key-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/key-distribution/</guid><description>&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 10.3 - Diffie Hellman Key Exchange&lt;/li>
+&lt;/ul>
+&lt;p>How can the parties share a secret key in the first place?&lt;/p>
+&lt;p>&lt;span class="missing-note" title="Note not published">Merkles Puzzle&lt;/span>&lt;/p>
+&lt;p>To summarise there are at least three distinct problems related to the use of private key encryption:&lt;/p>
+&lt;ol>
+&lt;li>key distribution&lt;/li>
+&lt;li>storing and maintaining large number of secret keys&lt;/li>
+&lt;li>inapplicability of private key cryptography to open systems&lt;/li>
+&lt;/ol>
+&lt;h1 id="partial-solution-kdc-key-distribution-centre">Partial Solution: KDC-Key Distribution Centre&lt;/h1>
+&lt;p>One way to address some of the concerns from the previous section is to use a key-distribution centre to establish shared keys.&lt;/p></description></item><item><title>Asymmetric Cryptography</title><link>https://Phoenix009.github.io/notes/security/asymmetric-cryptography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/asymmetric-cryptography/</guid><description>&lt;p>References:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 11.5 RSA&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 12 Digital Signatures&lt;/li>
+&lt;/ul>
+&lt;h1 id="setting-of-public-key-encryption">Setting of Public Key Encryption&lt;/h1>
+&lt;p>Public key techniques enable parties to communicate privately without having agreed on any secret information in advance.&lt;/p>
+&lt;p>Public key encryption is asymmetric. One party generates a pair of keys &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>p&lt;/mi>&lt;mi>k&lt;/mi>&lt;mo separator="true">,&lt;/mo>&lt;mi>s&lt;/mi>&lt;mi>k&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">(pk, sk)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> called the public key and the secret key. Public key is used to encrypt the message and secret key is used to decrypt the cipher text.&lt;/p>
+&lt;p>This encryption scheme removes the need for key exchange.&lt;/p></description></item><item><title>Attacks and Security Models</title><link>https://Phoenix009.github.io/notes/security/attacks-and-security-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/attacks-and-security-models/</guid><description>&lt;h1 id="classes-of-attacks-and-security-models">Classes of attacks and Security Models&lt;/h1>
+&lt;p>The attacks an adversary can mount can be classified as follows:&lt;/p>
+&lt;ol>
+&lt;li>A passive attack where the adversary only monitors the communication channel. A passive attacker only threatens confidentiality of data&lt;/li>
+&lt;li>An active attack is one where the adversary attempts to delete, add or in some other way alter the transmission channel. An active attacker threatens data integrity, authentication as well as confidentiality.&lt;/li>
+&lt;/ol>
+&lt;h1 id="attacks-on-encryption-schemes">Attacks on encryption schemes:&lt;/h1>
+&lt;h2 id="1-cipher-text-only-attack">1. Cipher text only attack:&lt;/h2>
+&lt;p>Adversary tries to deduce the decryption key or plaintext by only observing the cipher text. encryption scheme vulnerable to this attack is completely insecure&lt;/p></description></item><item><title>Crypto-protocols</title><link>https://Phoenix009.github.io/notes/security/crypto-protocols/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/crypto-protocols/</guid><description>&lt;p>Reference: &lt;a href="https://cacr.uwaterloo.ca/hac/" rel="noopener">https://cacr.uwaterloo.ca/hac/&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> 1.13–1.13.3,&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 10.3.3,&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 12.5.1 + 12.5.2&lt;/li>
+&lt;/ul>
+&lt;h1 id="challenge-response-identification-strong-authentication">Challenge-response identification (Strong Authentication)&lt;/h1>
+&lt;p>The idea of cryptographic challenge response protocol is that one entity (the claimant) proves its identity to another entity by demonstrating knowledge of a secret known to be associated with that entity, without revealing the secret itself to the verifier.&lt;/p>
+&lt;h2 id="time-variant-parameters">Time variant parameters&lt;/h2>
+&lt;p>Time variant parameters may be used in identification protocols to counteract replay and interleaving attacks, to provide uniqueness or timeliness guarantees and to prevent certain chosen text attacks&lt;/p></description></item><item><title>Digital Certificates and PKI</title><link>https://Phoenix009.github.io/notes/security/digital-certificates-and-pki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/digital-certificates-and-pki/</guid><description>&lt;h1 id="intuition">Intuition&lt;/h1>
+&lt;p>One of the primary applications of digital signatures includes the secure distribution of public keys.&lt;/p>
+&lt;p>The key notion here is a digital certificate, which is simply a signature binding an entity to a public key.&lt;/p>
+&lt;p>To be concrete, a party Charlie has generated a key pair &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>p&lt;/mi>&lt;msub>&lt;mi>k&lt;/mi>&lt;mi>C&lt;/mi>&lt;/msub>&lt;mo separator="true">,&lt;/mo>&lt;mi>s&lt;/mi>&lt;msub>&lt;mi>k&lt;/mi>&lt;mi>C&lt;/mi>&lt;/msub>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">(pk_C, sk_C)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> for a secure digital signature scheme. Another party Bob also has generated a key pair &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>p&lt;/mi>&lt;msub>&lt;mi>k&lt;/mi>&lt;mi>B&lt;/mi>&lt;/msub>&lt;mo separator="true">,&lt;/mo>&lt;mi>s&lt;/mi>&lt;msub>&lt;mi>k&lt;/mi>&lt;mi>B&lt;/mi>&lt;/msub>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;annotation encoding="application/x-tex">(pk_B, sk_B)&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>. Charlie knows that &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>p&lt;/mi>&lt;msub>&lt;mi>k&lt;/mi>&lt;mi>B&lt;/mi>&lt;/msub>&lt;/mrow>&lt;annotation encoding="application/x-tex">pk_B&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> is Bobs public key Then Charlie can compute the signature&lt;/p></description></item><item><title>TLS</title><link>https://Phoenix009.github.io/notes/security/tls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/tls/</guid><description>&lt;p>TLS allows a client and a server to agree on a set of shared keys and then to use those keys to encrypt and authenticate their subsequent communication.&lt;/p>
+&lt;p>It consists of two parts:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>handshake protocol&lt;/strong>: performs authenticated key exchange to establish the shared keys&lt;/li>
+&lt;li>&lt;strong>record protocol&lt;/strong>: uses the shared keys to encrypt and authenticate the parties communication&lt;/li>
+&lt;/ul>
+&lt;h2 id="handshake-protocol">Handshake Protocol:&lt;/h2></description></item><item><title>Authentication</title><link>https://Phoenix009.github.io/notes/security/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/authentication/</guid><description>&lt;p>The theoretical number of possible combinations&lt;/p>
+&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">&lt;semantics>&lt;mrow>&lt;mi mathvariant="normal">∣&lt;/mi>&lt;mi>A&lt;/mi>&lt;msup>&lt;mi mathvariant="normal">∣&lt;/mi>&lt;mi>L&lt;/mi>&lt;/msup>&lt;/mrow>&lt;annotation encoding="application/x-tex">
+|A|^L
+&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;ul>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>A&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">A&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> - set of possible characters&lt;/li>
+&lt;li>&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>L&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">L&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> - length of the password&lt;/li>
+&lt;/ul>
+&lt;p>The bits of entropy &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>e&lt;/mi>&lt;/mrow>&lt;annotation encoding="application/x-tex">e&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>:&lt;/p>
+&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">&lt;semantics>&lt;mrow>&lt;mi>e&lt;/mi>&lt;mo>=&lt;/mo>&lt;mi>L&lt;/mi>&lt;mo>×&lt;/mo>&lt;mfrac>&lt;mrow>&lt;mi>log&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;mo stretchy="false">(&lt;/mo>&lt;mi>A&lt;/mi>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;mrow>&lt;mi>log&lt;/mi>&lt;mo>⁡&lt;/mo>&lt;mo stretchy="false">(&lt;/mo>&lt;mn>2&lt;/mn>&lt;mo stretchy="false">)&lt;/mo>&lt;/mrow>&lt;/mfrac>&lt;/mrow>&lt;annotation encoding="application/x-tex">
+e = L \times \frac{\log(A)}{\log(2)}
+&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;p>
+The number of possible passwords:&lt;/p>
+&lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block">&lt;semantics>&lt;mrow>&lt;msup>&lt;mn>2&lt;/mn>&lt;mi>e&lt;/mi>&lt;/msup>&lt;/mrow>&lt;annotation encoding="application/x-tex">
+2^e
+&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span></description></item><item><title>Network security</title><link>https://Phoenix009.github.io/notes/security/network-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/network-security/</guid><description>&lt;h1 id="dns---domain-name-system">DNS - Domain Name System&lt;/h1>
+&lt;h2 id="what-is--dns">&lt;a href="https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/#introduction">What is DNS?&lt;/a>&lt;/h2>
+&lt;h2 id="dns-hierarchy">&lt;a href="https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/#distributed-hierarchical-database">DNS Hierarchy&lt;/a>&lt;/h2>
+&lt;h2 id="dns-resolution">DNS Resolution&lt;/h2>
+&lt;p>&lt;a class="note-embed" href="https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/#resolution">↪ DNS Resolution&lt;/a>&lt;/p>
+&lt;h2 id="dns-resource-records">DNS Resource Records&lt;/h2>
+&lt;p>&lt;a class="note-embed" href="https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/#dns-records-and-messages">↪ DNS - Internets Directory Service &amp;gt; DNS Records and Messages&lt;/a>&lt;/p>
+&lt;h2 id="dns-caching">DNS caching&lt;/h2>
+&lt;p>&lt;a class="note-embed" href="https://Phoenix009.github.io/notes/computer-networks/dns---internets-directory-service/#dns-caching">↪ DNS - Internets Directory Service &amp;gt; DNS Caching&lt;/a>&lt;/p>
+&lt;p>This allows for security attacks that affect both privacy and security. Ex: DNS Snooping and DNS Poisoning&lt;/p>
+&lt;h1 id="dns-cache-attacks">DNS Cache Attacks:&lt;/h1>
+&lt;h2 id="dns-cache-snooping">DNS Cache Snooping:&lt;/h2>
+&lt;ul>
+&lt;li>Inspect the contents to see usage of a resolver&lt;/li>
+&lt;li>Attacker Goal: Did a client recently visit domain X?&lt;/li>
+&lt;li>Threat Model: Attacker and victim share same resolver&lt;/li>
+&lt;li>Basic Idea: Attacker probes for cached entries
+&lt;ul>
+&lt;li>Attacker has to be careful to not set the DNS entries himself by setting the recursion resolution depth to 0. This way the queries that are not present in the cache are not resolved.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Poses threats to security and privacy:
+&lt;ul>
+&lt;li>Find out which sites have been visited&lt;/li>
+&lt;li>Does the victim visit certain possibly illegal websites&lt;/li>
+&lt;li>Find out visiting patterns&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="dns-cache-poisoning">DNS Cache Poisoning:&lt;/h2>
+&lt;ul>
+&lt;li>Attack Goal: inject attacker specified RRs to cache.&lt;/li>
+&lt;li>Once the cache is poisoned, attacker can control the traffic to the domains of all clients that the use poisoned resolver.
+&lt;ul>
+&lt;li>Redirect clients to malicious websites&lt;/li>
+&lt;li>Direct mail to mail servers under attack control&lt;/li>
+&lt;li>Disable Domains entirely (censorship)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="out-of-bailiwick-responses">Out of Bailiwick responses:&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Threat Model: attacker can trigger name resolution and controls their own authoritative NS for arbitrary domain.&lt;/p></description></item><item><title>Web Security</title><link>https://Phoenix009.github.io/notes/security/web-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/web-security/</guid><description>&lt;h1 id="sop---same-origin-policy">SOP - Same Origin Policy&lt;/h1>
+&lt;p>consider the tuple (protocol, hostname, port#) for implementing constraints.&lt;/p>
+&lt;p>In the earliest days of the Web there were no security considerations for JS. Any document could arbitrarily frame others and gain read/write access.&lt;/p>
+&lt;p>Without any separation, the attacker could use the handle of the frame in JS to read the entire body of the cross origin resource.&lt;/p>
+&lt;p>To stop such attacks, all browsers implement the webs most basic security mechanism: The SOP - Same Origin Policy. This policy is used for multiple purposes namely to stop access to cross origin frames, disallow modification of cookies, disallow read access to HTTP responses to other origins when the requests are made through JS.&lt;/p></description></item><item><title>Software Security</title><link>https://Phoenix009.github.io/notes/security/software-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/software-security/</guid><description>&lt;h1 id="os-basics">OS Basics&lt;/h1>
+&lt;h2 id="process">Process&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Process is an abstraction for a program in execution&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The OS maintains a lot of information about execution context.&lt;/p>
+&lt;ul>
+&lt;li>Information related to all code and data needed for executing the program&lt;/li>
+&lt;li>State of CPU&lt;/li>
+&lt;li>List of open files&lt;/li>
+&lt;li>Related Processes&lt;/li>
+&lt;li>etc&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>PCB- Process Control Block&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>All the attributes of a process are stored in a single structure called a PCB&lt;/li>
+&lt;li>The content of the PCB represents the context of a process&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Representation&lt;/strong>:&lt;/p></description></item><item><title>Exam Prep</title><link>https://Phoenix009.github.io/notes/security/exam-prep/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/exam-prep/</guid><description>&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> What is CIA Triad&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Revise Security Policy, Security Mechanism&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://Phoenix009.github.io/notes/security/symmetric-cryptography/#kerchoffs-principle">Symmetric Cryptography &amp;gt; Kerchoff&amp;rsquo;s Principle&lt;/a>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://Phoenix009.github.io/notes/security/integrity/#roles-of--textipad-and--textopad">Integrity &amp;gt; Roles of &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>t&lt;/mi>&lt;mi>e&lt;/mi>&lt;mi>x&lt;/mi>&lt;mi>t&lt;/mi>&lt;mrow>&lt;mi>i&lt;/mi>&lt;mi>p&lt;/mi>&lt;mi>a&lt;/mi>&lt;mi>d&lt;/mi>&lt;/mrow>&lt;/mrow>&lt;annotation encoding="application/x-tex"> text{ipad}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span> and &lt;span class="katex">&lt;math xmlns="http://www.w3.org/1998/Math/MathML">&lt;semantics>&lt;mrow>&lt;mi>t&lt;/mi>&lt;mi>e&lt;/mi>&lt;mi>x&lt;/mi>&lt;mi>t&lt;/mi>&lt;mrow>&lt;mi>o&lt;/mi>&lt;mi>p&lt;/mi>&lt;mi>a&lt;/mi>&lt;mi>d&lt;/mi>&lt;/mrow>&lt;/mrow>&lt;annotation encoding="application/x-tex"> text{opad}&lt;/annotation>&lt;/semantics>&lt;/math>&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> What more about digital signatures&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Revise the algorithms in the Crypto protocol lecture&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> DANE&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> bits of entropy and possible number of passwords&lt;/li>
+&lt;/ul>
+&lt;p>Morning:&lt;/p>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> Review TLS&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> CSP examples from the videos&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> definitions for hash properties&lt;/li>
+&lt;/ul></description></item><item><title>pwntools</title><link>https://Phoenix009.github.io/notes/security/pwntools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/pwntools/</guid><description/></item><item><title>Tools to learn</title><link>https://Phoenix009.github.io/notes/security/tools-to-learn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Phoenix009.github.io/notes/security/tools-to-learn/</guid><description>&lt;ol>
+&lt;li>&lt;span class="missing-note" title="Note not published">GDB&lt;/span>&lt;/li>
+&lt;li>&lt;a href="https://Phoenix009.github.io/notes/security/pwntools/">pwntools&lt;/a>
+&lt;ol>
+&lt;li>shellcraft&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

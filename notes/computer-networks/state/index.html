@@ -1,0 +1,27 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>State | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>State</h1><div class=content><h2 id=separation-of-control-and-data>Separation of control and data</h2><p><em>Why?</em></p><ul><li>Allows concurrent control and data flow</li><li>simplifies processing of data/control streams</li><li>Provide QoS appropriate for control/data streams</li></ul><p><em>Why not?</em></p><ul><li>Separate channels complicate management, increases resource requirements</li><li>can increase latency</li></ul><h2 id=maintaining-network-state>Maintaining network state</h2><p>#definition <strong>State</strong>: Information stored in network nodes by network protocols</p><ul><li>Updated when network &ldquo;conditions&rdquo; change</li><li>Stored in multiple nodes</li><li>Often associated with end-systems generated call or sessions</li></ul><p>In this context:</p><ul><li><strong>Sender</strong>: Node that generates signalling messages to install, keep-alive, remove state from other nodes</li><li><strong>Receiver</strong>: Node that creates, maintains, removes state based on signalling messages received from sender</li></ul><h2 id=hard-state-vs-soft-state>Hard State vs Soft State</h2><h3 id=hard-state>Hard State:</h3><ul><li>State installed by receiver via <mark>setup messages</mark> from sender</li><li>State removed by receiver via <mark>teardown message</mark> from sender</li></ul><h3 id=soft-state>Soft State:</h3><ul><li>State installed by receiver via setup message from sender</li><li>State removed by receiver via timeout</li><li>Sender sends periodic refresh message indicating receiver should continue to maintain state</li></ul><h4 id=allows-easy-handling-of-changes>Allows &ldquo;Easy&rdquo; handling of changes:</h4><ul><li>No need for network to signal failure/change to end system</li><li>Less signalling than hard-state from network to end system</li><li>More signalling than hard-state from end-system to network for refreshes</li></ul><p><em>How to set the refresh/timeout timers?</em></p><ul><li>State timeout interval = n * refresh-interval</li><li>the value of n determines the amount of signalling traffic<ul><li>Small timers: Fast response to changes, more signalling</li><li>Long timers: Slow response to changes, less signalling</li></ul></li></ul></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/signalling/>← Signalling</a>
+<a class=next href=/notes/computer-networks/rsvp/>RSVP →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

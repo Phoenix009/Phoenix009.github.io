@@ -1,0 +1,32 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>IOT | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>IOT</h1><div class=content><h2 id=introduction>Introduction:</h2><p>&ldquo;Things&rdquo; getting connected to the Internet and getting &ldquo;Smart&rdquo;</p><p>What is needed for IoT?:</p><ul><li>&ldquo;Smart&rdquo; devices</li><li>Communication</li><li>Applications</li></ul><p><em>Why connect things to the internet?</em></p><ul><li>IoT devices have power and CPU constraints</li><li>Offloading of complicated tasks from IoT devices allows smaller and more energy efficient devices</li><li>Host &lsquo;Smart&rsquo; part of &lsquo;Dumb&rsquo; devices</li><li>Cloud applications can be updated at will of vendor</li><li>No user interaction needed for updates</li></ul><p><strong>Simplified Setup for IoT:</strong>
+Let all devices connect to the cloud with known endpoints controlled by the vendor</p><ul><li>Can be scaled and is under full control of the vendor</li><li>Home network is unknown</li><li>No direct access to devices, but they can connect to the outside</li><li>No problem with dead or broken devices. No need to store state at vendor</li></ul><h2 id=what-is-a-message-broker>What is a Message Broker?</h2><p>A pattern in software architecture
+In out context:</p><ul><li>Reachable by all devices</li><li>Receiving messages</li><li>Keeping state</li><li>Forwarding messages
+Is just an intermediary that forwards messages between different components of the IoT</li></ul><h2 id=mqtt---message-queuing-telemetry-transport>MQTT - Message Queuing Telemetry Transport</h2><ul><li>Core is the Message Broker</li><li>Clients can subscribe to topics</li><li>Clients can publish data for a topic/topics</li><li>Clients interact only with the message broker</li><li>Uses TCP usually a long-standing connection</li></ul><h3 id=subscribing-to-topics>Subscribing to topics:</h3><ul><li>Topics are organised in hierarchy.</li><li>Have naming similar to the file path.</li><li>There are two wildcards:<ol><li><code>+</code> - place holder matching single value
+Ex: <code>+/sw0</code> matches <code>/switches/sw0</code></li><li><code>#</code> - place holder matching one or multiple values
+Ex: <code>#/sw0</code> matches <code>/switches/in/.../sw0</code></li></ol></li></ul><h2 id=security>Security</h2><p>Limited CPU resources is a major constraint while implementing security in IoT</p><ul><li>Confidentiality<ul><li>Data should be transferred encrypted</li><li>Data processing in cloud -> cloud should be secure</li></ul></li><li>Integrity</li><li>Availability<ul><li>All cloud solutions rely on the internet</li><li>vendor cloud needs to be available too</li></ul></li><li>Safety (for IoT):<ul><li>Depending on the devices serious injury on death are possible</li><li>Simple errors can get extremely expensive</li><li>Hardware based safety</li></ul></li><li>Privacy (for IoT):<ul><li>Data from IoT can provide deep insights</li></ul></li></ul></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/mobility-and-indirection/>← Mobility and Indirection</a>
+<a class=next href=/notes/computer-networks/qos---quality-of-service/>QoS - Quality of Service →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

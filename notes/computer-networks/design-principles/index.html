@@ -1,0 +1,27 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Design Principles | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/computer-networks/>Computer Networks</a> /</p><h1 class=title>Design Principles</h1><div class=content><h3 id=goals>Goals:</h3><ul><li>Identify, study common architectural components, protocol mechanisms, approaches we find in network architectures</li></ul><h3 id=design-principles>Design Principles:</h3><ul><li><a href=/notes/computer-networks/state/#separation-of-control-and-data>Separation of data and control</a></li><li><a href=/notes/computer-networks/state/#hard-state-vs-soft-state>Hard State vs Soft State</a></li><li>Randomisation</li><li>Indirection</li><li>Network Virtualisation</li><li>Resource Sharing</li><li>Design for scale</li></ul><h2 id=signalling><a href=/notes/computer-networks/signalling/>Signalling</a></h2><h2 id=state><a href=/notes/computer-networks/state/>State</a></h2><h2 id=internet-design-philosophy>Internet Design Philosophy:</h2><h3 id=survivability>Survivability:</h3><ul><li>Continue to operate even under network failures<ul><li>As long as the network is not partitioned, two endpoints should be able to communicate</li></ul></li><li>Maintain end-to-end transport state only at endpoints</li><li>Eliminates the problem of handling state inconsistency and performing state restoration</li><li>Stateless network architecture</li></ul><h3 id=types-of-services>Types of Services:</h3><ul><li>datagram abstraction</li><li>Lowest common denominator on which services can be built - IP</li><li>Service differentiation was considered</li></ul><h3 id=variety-of-networks>Variety of networks:</h3><ul><li>Internet was very successful to provide this feature</li><li>It requires minimal service from the underlying network. It requires the underlying network to deliver the packets with a &ldquo;reasonable&rdquo; probability of success</li><li>No requirement for Reliability and In-order delivery</li></ul><h3 id=distributed-management>Distributed Management</h3><ul><li>Administrative Autonomy</li></ul><h3 id=cost-effectiveness>Cost Effectiveness</h3><ul><li>Sources of Inefficiency<ul><li>Headers</li><li>Retransmission</li><li>Routing</li></ul></li><li>optimal performance was never a priority for design</li></ul><h3 id=low-cost-of-attaching-a-new-host>Low cost of attaching a new host:</h3><ul><li>Not the best</li><li>Things are improving - DHCP auto configuration</li></ul><h3 id=accountability>Accountability:</h3><ul><li>Anyone can share the packets in the internet</li><li>NO ACCOUNTABILITY</li></ul></div></article><nav class=note-nav><a class=prev href=/notes/computer-networks/software-defined-networking/>← Software Defined Networking</a>
+<a class=next href=/notes/computer-networks/signalling/>Signalling →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>

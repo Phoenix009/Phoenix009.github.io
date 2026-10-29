@@ -1,0 +1,27 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><title>Sequential Consistency | Jaideep M. More</title><link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/smigle.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css crossorigin=anonymous><link rel=stylesheet href=/css/notes.css><link rel=stylesheet href=/css/custom.css><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"></head><body><div id=root><header><div id=brand><a class=icon-link href=https://Phoenix009.github.io/><img class=icon src=/images/all_might.png></a><div class=text><a href=https://Phoenix009.github.io/><h1>Jaideep M. More</h1></a><h3>software engineer</h3></div></div><nav><a href=/><b>Home</b></a>
+|
+<a href=/about/><b>About</b></a>
+|
+<a href=/posts/><b>Posts</b></a>
+|
+<a href=/notes/><b>Notes</b></a>
+|
+<a href=/index.xml><b>RSS</b></a></nav><hr></header><div id=content><main><article class=note><p class=breadcrumb><a href=/notes/>Notes</a> /
+<a href=/notes/distributed-systems/>Distributed Systems</a> /</p><h1 class=title>Sequential Consistency</h1><div class=content><p>Our system may execute the operations in a different order than is specified.</p><p>The execution is correct if the result of the execution is the same as if the operations had been executed in the order they were specified.</p><p>The result of any execution is the same if the operations of all the processors were executed in some sequential order, and the operation of each individual processor appear in this sequence in the order specified.</p><p><mark>Rule1</mark>: There exists a total order of <code>read</code> and <code>write</code> producing the same outcome for the application.</p><p><mark>Rule2</mark>: We can find each machines individual sequence of instructions within the total order</p><p><mark>Reads may be stale</mark> in terms of real time but not in logical time. <mark>Writes are totally ordered</mark> according to logical time (defined by the total order) across all replicas.</p><p>The writes have to be synchronous => non concurrent write operations.</p><p>This consistency model can be actually implemented for distributed systems.</p><h3 id=implementation>Implementation</h3><h4 id=1-primary-server>1. Primary Server:</h4><ul><li>Designate a primary machine. Every machine sends the <code>read</code> and <code>write</code> operations to the primary.</li><li>The order in which the primary executes the writes determines the total order of the operations.</li><li>The operations are slow. Every operation goes over the network</li><li>The primary server is the bottleneck.</li></ul><h4 id=2-partition-memory>2. Partition Memory:</h4><ul><li>Divides the memory into partitions.</li><li>Each machine is assigned as the primary for different partitions.</li><li>This spreads the storage loads across machines. Good performance is achieved if the machines operate mostly on the local partitions.</li></ul><h4 id=3-global-locks>3. Global Locks:</h4><ul><li>This implementation of SC uses one global lock for all addresses in memory.</li><li>To access memory, machine must first acquire lock, operate on locked memory, release lock.</li><li>This implementation attains SC, total order is determined by the locks movement.</li></ul><p>Read: <a href=/notes/distributed-systems/papers-summary/ivy---shared-virtual-memory-system/>IVY - Shared Virtual Memory System</a></p></div></article><nav class=note-nav><a class=prev href=/notes/distributed-systems/strict-consistency/>← Strict Consistency</a>
+<a class=next href=/notes/distributed-systems/release-consistency/>Release Consistency →</a></nav></main></div><footer><hr><p id=social>Find me around the web:<br><a href=https://github.com/Phoenix009>GitHub</a>
+|
+<a href=https://leetcode.com/u/jaideepmore307/>Leetcode</a>
+|
+<a href=https://www.linkedin.com/in/jaideep-more-a9733015a/>Linkedin</a>
+|
+<a href=https://jaideepmore.medium.com/>Medium</a>
+|
+<a href=mailto:morejaideep.work@gmail.com>Mail</a></p><p class=copyright>Copyright © 2026
+<a href=https://Phoenix009.github.io/><strong>Jaideep More</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p><p class=builtWith>Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.</p></footer></div></body></html>
